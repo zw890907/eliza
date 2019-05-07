@@ -52,11 +52,11 @@ header{
       border: 1px solid #cccccc;
       border-radius: 15px;
       line-height: 30px;
-      margin-left: 50px;
+      margin-left: 40px;
       i{
-        font-size: 15px !important;
+        font-size: 10px !important;
         color: #333333;
-        margin-right: 5px;
+        margin: auto 5px;
       }
       input{
         outline: none;
@@ -66,7 +66,7 @@ header{
       }
     }
     .login{
-      margin-left: 50px;
+      margin-left: 40px;
       font-size: 14px;
       a{
         color:#000000;
@@ -76,10 +76,35 @@ header{
       }
     }
     .cart{
-      margin-left: 50px;
+      margin-left: 40px;
+      position: relative;
+      a{
+        display: block;
+        width: 70px;
+        height: 30px;
+        line-height: 30px;
+      }
       i{
-        font-size: 30px !important;
+        font-size: 20px !important;
         color: #333333;
+      }
+      span{
+        width: 15px;
+        height: 15px;
+        color:#fff;
+        line-height: 15px;
+        text-align: center;
+        font-size: 10px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 40px;
+      }
+      p{
+        color:#333333;
+        font-size: 12px;
+        float: right;
       }
     }
   }
