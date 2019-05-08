@@ -1,6 +1,11 @@
-# 伟强店铺管理系统
+# eliza
 
 ### 系统功能
+
+* 首页
+* 列表页
+* 详情页
+* 购物车页面
 
 * 登录
 * 注册
@@ -18,8 +23,17 @@
 * bootstrap
 * php
 * mysql
+* jquery
 
 ### 接口文档
+
+##### 首页类型请求
+
+url : (后台) http://www.porn.com/api/v1/index/type
+
+​	(假数据)http://rap2api.taobao.org/app/mock/166498/index/type
+
+总结：将http://rap2api.taobao.org/app/mock/166498用一个url变量接收，以后只需改变url就可以
 
 ##### 查询所有数据
 

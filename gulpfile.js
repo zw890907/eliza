@@ -40,10 +40,10 @@ gulp.task('html',() => {
 gulp.task('js',() => {
     //所有js代码取出来，将ES6转为ES5 babel
     gulp.src('src/js/**/*.js')
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(uglify())
+        // .pipe(babel({
+        //     presets: ['@babel/env']
+        // }))
+        // .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(connect.reload());
 })
