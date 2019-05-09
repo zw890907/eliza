@@ -3,6 +3,6 @@
 define( () => {
     return {
         rapBaseUrl : "http://rap2api.taobao.org/app/mock/166498/",
-        phpBaseUrl : "http://localhost"
+        phpBaseUrl : "http://localhost/eliza/api/v1/"
     }
 });

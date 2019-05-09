@@ -85,14 +85,28 @@ header{
     right: 0;
     top: 0;
     .searchBox{
-      widows: 100px;
+      width: 200px;
       height: 30px;
       border: 1px solid #cccccc;
       border-radius: 15px;
       line-height: 30px;
-      margin-left: 40px;
+      //margin-left: 40px;
       a{
         text-decoration: none;
+      }
+      i{
+        font-size: 10px !important;
+        color: #333333;
+        margin: auto 5px;
+      }
+      input{
+        height: 20px;
+        line-height: 20px;
+        width: 170px;
+        outline: none;
+        border: none;
+        color: #000000;
+        font-size: 12px;
       }
       #searchUl{
         position: absolute;
@@ -112,21 +126,22 @@ header{
           }
         }
       }
-      i{
-        font-size: 10px !important;
-        color: #333333;
-        margin: auto 5px;
-      }
-      input{
-        outline: none;
-        border: none;
-        color: #000000;
-        font-size: 12px;
-      }
     }
     .login{
-      margin-left: 40px;
+      margin-left: 50px;
       font-size: 14px;
+      a{
+        color:#000000;
+        &:hover{
+          color:red;
+          text-decoration: none;
+        }
+      }
+    }
+    .login-out{
+      margin-left: 50px;
+      font-size: 14px;
+      display: none;
       a{
         color:#000000;
         &:hover{

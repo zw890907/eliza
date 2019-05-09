@@ -1,17 +1,27 @@
-define(["tools"],(tools) => {
-    class Footer {
-        constructor(){
-            //规定头部容器都是<header></header>标签
-            this.container = document.querySelector("footer");
-            this.load();
-        }
-        //加载footer.html
+define(['jquery'], $ => {
+    function Footer () {
+      this.container = $("#footer");
+      
+      this.load().then(() => {
+        //this.search();
+        //this.isLogin();
+      });
+    }
+    // 对象合并
+    $.extend(Footer.prototype, {
+        // ES6对象增强写法
         load () {
-            //暂时写成决对路径
-            tools.ajaxGetPromise("html/module/footer.html",null,false).then(html => {
-                this.container.innerHTML = html;
+            // 将header.html加载到container里
+            // this.container.load('/html/module/header.html #header-bottom'); 
+            // 选择加载文件中的某一部分
+            //承诺将异步转为同步
+            return new Promise(resolve => {
+                this.container.load('/html/module/footer.html', () => {
+                    // load异步执行结束
+                    resolve();
+                });
             })
         }
-    }
+    })
     return new Footer();
 });

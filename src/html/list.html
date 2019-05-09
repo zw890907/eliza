@@ -4,9 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>eliza-商品列表页</title>
+    <link rel="stylesheet" href="/css/list.css">
 </head>
 <body>
-    adsfdsfa
+    <!-- header -->
+    <header id="header"></header>
+    <main>
+        <div class="banner"></div>
+        <div class="wrap">
+            <aside>
+                <div class="search">
+                    <h3>搜索</h3>
+                    <div>
+                        <input type="text" placeholder="Search here...">
+                        <button class="iconfont icon-sousuo"></button>
+                    </div>
+                </div>
+                <div class="shopRefine">
+                    <h3>商品优化</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">出售</a></span>
+                            <span class="num"><a href="javascript:;">4</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">出售</a></span>
+                            <span class="num"><a href="javascript:;">5</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">出售</a></span>
+                            <span class="num"><a href="javascript:;">6</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="shopFilter">
+                    <h3>按价格过滤</h3>
+                    <span>$16.00 - $999.00</span>
+                    <img src="/images/btn-6.gif" alt="">
+                </div>
+                <div class="shopColour">
+                    <h3>颜色</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">蓝色</a></span>
+                            <span class="num"><a href="javascript:;">4</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">红色</a></span>
+                            <span class="num"><a href="javascript:;">5</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">青色</a></span>
+                            <span class="num"><a href="javascript:;">6</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">黄色</a></span>
+                            <span class="num"><a href="javascript:;">6</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="shopSize">
+                    <h3>尺寸</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">XL</a></span>
+                            <span class="num"><a href="javascript:;">4</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">L</a></span>
+                            <span class="num"><a href="javascript:;">5</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">SM</a></span>
+                            <span class="num"><a href="javascript:;">6</a></span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span><a href="javascript:;">XXL</a></span>
+                            <span class="num"><a href="javascript:;">6</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="shopTag">
+                    <h3>标签</h3>
+                    <ul>
+                        <li><a href="javascript:;">标签</a></li>
+                        <li><a href="javascript:;">标签</a></li>
+                        <li><a href="javascript:;">标签</a></li>
+                        <li><a href="javascript:;">标签</a></li>
+                        <li><a href="javascript:;">标签</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <section>
+                <!-- Single button -->
+                <div class="list-nav">
+                    <select>
+                        <option selected="">按价格排序</option>
+                        <option>按新品排序</option>
+                        <option>按数量排序</option>
+                        <option>按距离排序</option>
+                    </select>
+                    <p>显示20个结果中的1-12</p>
+                    <a href="javascript:;"><i class="iconfont icon-hengxian"></i></a>
+                    <a href="javascript:;" class="ac"><i class="iconfont icon-t_tianzige"></i></a>
+                </div>
+                <ul id="shopList"></ul>
+                <script type="text/html" id="list-monopoly">
+                    {{each list item}}
+                        <li>
+                            <a href="javascript:;" class="contain-list-bg"><img src="{{item.image}}"/></a>
+                            <a href="javascript:;" class="contain-list-word">{{item.title}}</a>
+                            <p class="star">{{item.string}}</p>
+                            <p class="price">￥{{item.float}} - <span>￥{{item.price}}</span></p>
+                            <div>-{{item.num}}%</div>
+                            <ul class="addShop">
+                                <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                                <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                                <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                            </ul>
+                        </li>
+                    {{/each}}
+                </script>
+                    <!-- <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="/images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="/images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li> -->
+                
+                <nav aria-label="Page navigation" class="page">
+                    <ul class="pagination">
+                        <li>
+                            <a href="javascript:;" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="javascript:;">1</a></li>
+                        <li><a href="javascript:;">2</a></li>
+                        <li>
+                            <a href="javascript:;" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="/libs/requirejs/require.min.js" data-main="/js/list.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
-define(['jquery'], $ => {
+define(['jquery','cookie'], $ => {
     function Header () {
       this.container = $("#header");
       
       this.load().then(() => {
         this.search();
+        this.isLogin();
       });
     }
     // 对象合并
@@ -56,6 +57,26 @@ define(['jquery'], $ => {
                     $("#search").val(target.innerHTML);
                     $("#searchUl").html("");
                 })
+            })
+        },
+        isLogin () {
+            this.loginBtn = $("#loginBtn");
+            this.loginOut = $("#loginOut");
+            this.nameSpan = $("#name");
+            this.exit = $("#exit");
+            //console.log(this.exit);
+            let username = $.cookie("username");
+            if(username){
+                this.loginBtn.hide();
+                this.loginOut.show();
+                this.nameSpan.html(username);
+            }
+            this.exit.on("click",() => {
+                if(confirm("确定要退出吗？")){
+                    $.removeCookie("username",{path : "/"});
+                    this.loginBtn.show();
+                    this.loginOut.hide();
+                }
             })
         }
     })

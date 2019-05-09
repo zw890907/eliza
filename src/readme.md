@@ -35,6 +35,34 @@ url : (后台) http://www.porn.com/api/v1/index/type
 
 总结：将http://rap2api.taobao.org/app/mock/166498用一个url变量接收，以后只需改变url就可以
 
+##### 注册接口
+
+url : (后台) http://www.porn.com/api/v1/user/register.php
+
+method : post
+
+query : {username,password}
+
+data ： {
+
+​	res_code : 1, // 1代表成功，0代表失败,
+
+​	res_message : "添加成功" || "网络错误，添加失败，请重试",
+
+​	res_body : {
+
+​		date : [
+
+​			{id,name,price,num},
+
+​			{id,name,price,num}
+
+​		]
+
+​	}
+
+}
+
 ##### 查询所有数据
 
 * url : api/v1/select.php

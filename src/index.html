@@ -70,24 +70,104 @@
             </div>
             <!-- list盒子渲染数据 -->
             <div class="contain-list" id="list-contain"></div>
-                <script type="text/html" id="list-monopoly">
+                <script type="text/html" id="list-shop">
                     <ul>
-                        {{each list item}}
-                            <li>
-                                <a href="/html/list.html" class="contain-list-bg"><img src="{{item.image}}"/></a>
-                                <a href="/html/list.html" class="contain-list-word">{{item.title}}</a>
-                                <p class="star"><img src="images/btn-1.gif"/></p>
-                                <p class="price">￥{{item.float}} - <span>￥{{item.float}}</span></p>
-                                <div>-30%</div>
-                                <ul class="addShop">
-                                    <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
-                                    <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
-                                    <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
-                                </ul>
-                            </li>
-                        {{/each}}
-                    </ul>
+                    {{each list item}}
+                        <li>
+                            <a href="javascript:;" class="contain-list-bg"><img src="{{item.image}}"/></a>
+                            <a href="javascript:;" class="contain-list-word">{{item.title}}</a>
+                            <p class="star">{{item.string}}</p>
+                            <p class="price">￥{{item.float}} - <span>￥{{item.price}}</span></p>
+                            <div>-{{item.num}}%</div>
+                            <ul class="addShop">
+                                <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                                <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                                <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                            </ul>
+                        </li>
+                    {{/each}}
+                </ul>
                 </script>
+                    <!-- <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-2.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">背包--尽显女士风采</a>
+                        <p class="star"><img src="images/btn-2.gif"/></p>
+                        <p class="price">￥99.00</p>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-3.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">运动鞋--2019新品运动鞋</a>
+                        <p class="star"><img src="images/btn-3.gif"/></p>
+                        <p class="price">￥299.00 - <span>￥399.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-4.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">连衣裙--2019春夏爆款连衣裙</a>
+                        <p class="star"><img src="images/btn-3.gif"/></p>
+                        <p class="price">￥168.00</p>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-5.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">手表--2019爆款手表推荐</a>
+                        <p class="star"><img src="images/btn-2.gif"/></p>
+                        <p class="price">￥699.00</span></p>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-6.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">衬衫--2019春夏日本男装市场</a>
+                        <p class="star"><img src="images/btn-1.gif"/></p>
+                        <p class="price">￥88.00 - <span>￥128.00</span></p>
+                        <div>-30%</div>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-7.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">牛仔上衣--2019秋冬单品推荐</a>
+                        <p class="star"><img src="images/btn-1.gif"/></p>
+                        <p class="price">￥468.00</span></p>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="contain-list-bg"><img src="images/hm1-pro-8.jpg"/></a>
+                        <a href="javascript:;" class="contain-list-word">卫衣--19春夏国际校服推荐</a>
+                        <p class="star"><img src="images/btn-3.gif"/></p>
+                        <p class="price">￥108.00</span></p>
+                        <div>新品</div>>
+                        <ul class="addShop">
+                            <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                            <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                        </ul>
+                    </li> -->
         </div>
         <div class="banner">
             <p class="banner-img"><img src="images/testi-1.png" alt=""></p>
@@ -131,7 +211,7 @@
             <i class="iconfont icon-jiantou"></i>
         </a>
     </main>
-    <footer></footer>
+    <footer id="footer"></footer>
     
         
     <script src="libs/requirejs/require.min.js" data-main="js/index"></script>     

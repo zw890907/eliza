@@ -258,11 +258,13 @@ main .contain{
                         text-decoration: none;
                     }
                 }
-                .star img{
+                .star{
                     width: 103px;
                     height: 15px;
+                    margin: 0 auto;
                     margin-top: 12px;
                     margin-bottom: 15px;
+                    color:rgb(226, 19, 105);
                 }
                 .price{
                     font-size: 12px;
@@ -342,6 +344,7 @@ main .blogs{
     height: 550px;
     margin: 0 auto;
     //background-color: palegoldenrod;
+    margin-bottom: 100px;
     overflow: hidden;
     text-align: center;
     h3{
@@ -415,11 +418,13 @@ main .blogs{
     right: 20px;
     bottom: 60px;
     z-index: 6;
-    // &:hover i{
-
-    // }
+    
+    //  &:hover i{
+    //     text-decoration: none;
+    //  }
     i{
         font-size: 20px !important;
         color: #fff;
+        //text-decoration: none;
     }
 }

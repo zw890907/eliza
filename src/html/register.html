@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>eliza-注册</title>
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
+    <!-- header -->
+    <header id="header"></header>
+    <div class="login-background"><img src="/images/bgt.jpg"/></div>
     <div class="form-container">
         <form class="form-horizontal">
             <h1 class="text-center">注册</h1>
@@ -26,12 +29,12 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="btn" type="submit" class="btn btn-default">注册</button>
+                    <button id="btn" type="button" class="btn btn-default">注册</button>
                     <span class="text-info form-message">已有账号？ <a class="text-danger" href="login.html"><ins>去登录</ins></a></span>
                 </div>
             </div>
         </form>
     </div>
-    <script src="/lib/requirejs/require.js" data-main="/js/register.js"></script>
+    <script src="/libs/requirejs/require.js" data-main="/js/register.js"></script>
 </body>
 </html>

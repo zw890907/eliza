@@ -1,0 +1,369 @@
+@import "../libs/bootstrap/css/bootstrap.min.css";
+@import "module/base.scss";
+@import "module/header.scss";
+@import "module/iconfont.css";
+@import "module/footer.scss";
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+	width: 100%;
+    height: 100%;
+}
+main{
+    width: 100%;
+    .banner{
+        width: 100%;
+        height: 260px;
+        background:url(../images/btn-5.gif) no-repeat center;
+    }
+    .wrap{
+        width: 1176px;
+        height: 1682px;
+        margin: 0 auto;
+        margin-top: 95px;
+        //background: pink;
+        //overflow: hidden;
+        aside{
+            height: 1138px;
+            width: 245px;
+            float: left;
+            h3{
+                font-size: 16px;
+                height: 14px;
+                margin-top: 0;
+                color: #333333;
+            }
+            .search{
+                width: 100%;
+                height: 92px;
+                //background: red;
+                overflow: hidden;
+                div{
+                    width: 240px;
+                    height: 40px;
+                    border: 1px solid #e6e6e6;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                    input{
+                        border: none;
+                        outline: none;
+                        width: 190px;
+                        height: 27px;
+                        margin-top: 6px;
+                        border-right: 1px solid #a1a5aa;
+                        columns: #333333;
+                        font-size: 12px;
+                        padding-left: 12px;
+                    }
+                    button{
+                        border: none;
+                        outline: none;
+                        float: right;
+                        width: 47px;
+                        height: 38px;
+                        background-color: #ffffff;
+                        i{
+                            font-size: 14px !important;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+            .shopRefine{
+                width: 100%;
+                height: 158px;
+                margin-top: 52px;
+                ul{
+                    width: 100%;
+                    height: 112px;
+                    margin-top: 30px;
+                    li{
+                        width: 100%;
+                        height: 25px;
+                        line-height: 20px;
+                        margin-bottom: 13px;
+                        input{
+                            color:#888888;
+                            font-size: 15px;
+                            vertical-align: top;
+                            margin-left: 5px;
+                            margin-right: 10px;
+                        }
+                        span{
+                            font-size: 12px;
+                            &:hover a{
+                                color:red;
+                            }
+                            a{
+                                color:#333333;
+                                text-decoration: none;
+                            }
+                        }
+                        .num{
+                            float: right;
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            text-align: center;
+                            line-height: 25px;
+                            background: #eeeeee;
+                            border-radius: 50%;
+                            &:hover{
+                                transition: 1s;
+                                background-color: red;
+                                a{
+                                    color:#fff;
+                                    transition: 1s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .shopFilter{
+                width: 100%;
+                height: 88px;
+                margin-top: 46px;
+                span{
+                    font-size: 12px;
+                    color: #333333;
+                    display: block;
+                    margin-top: 30px;
+                }
+                img{
+                    margin-top: 10px;
+                }
+            }
+            .shopColour,.shopSize{
+                width: 100%;
+                height: 190px;
+                margin-top: 45px;
+                ul{
+                    width: 100%;
+                    height: 112px;
+                    margin-top: 30px;
+                    li{
+                        width: 100%;
+                        height: 25px;
+                        line-height: 20px;
+                        margin-bottom: 13px;
+                        input{
+                            color:#888888;
+                            font-size: 15px;
+                            vertical-align: top;
+                            margin-left: 5px;
+                            margin-right: 10px;
+                        }
+                        span{
+                            font-size: 12px;
+                            &:hover a{
+                                color:red;
+                            }
+                            a{
+                                color:#333333;
+                                text-decoration: none;
+                            }
+                        }
+                        .num{
+                            float: right;
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            text-align: center;
+                            line-height: 25px;
+                            background: #eeeeee;
+                            border-radius: 50%;
+                            &:hover{
+                                transition: 1s;
+                                background-color: red;
+                                a{
+                                    color:#fff;
+                                    transition: 1s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .shopTag{
+                width: 100%;
+                height: 188px;
+                margin-top: 40px;
+                ul{
+                    width: 100%;
+                    height: 140px;
+                    margin-top: 25px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: left;
+                    align-content: space-around;
+                    li{
+                        width: 100px;
+                        height: 35px;
+                        line-height: 35px;
+                        font-size: 12px;
+                        background-color: #f6f6f6;
+                        border-radius: 5px;
+                        text-align: center;
+                        margin-left: 15px;
+                        &:hover{
+                            background-color: red;
+                            transition: 1s;
+                            a{
+                                color:#fff;
+                                transition: 1s;
+                            }
+                        }
+                        a{
+                            text-decoration: none;
+                            color:#333333;
+                        }
+                    }
+                }
+            }
+        }
+        section{
+            width: 874px;
+            height: 1682px;
+            float: right;
+            .list-nav{
+                width: 100%;
+                height: 65px;
+                color: #333333;
+                select{
+                    border: none;
+                    outline: none;
+                    letter-spacing: 1.5px;
+                    float: left;
+                    width: 130px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                p{
+                    font-size: 12px;
+                    width: 200px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    float: left;
+                }
+                a{
+                    color:#333333;
+                    float: right;
+                    margin: 7px;
+                    text-decoration: none;
+                    i{
+                        font-size: 18px !important;
+                    }
+                }
+                .ac{
+                    color:red;
+                }
+            }
+            #shopList{
+                width: 100%;
+                height: 1430px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: space-between;
+                li{
+                    width: 268px;
+                    height: 454px;
+                    text-align: center;
+                    border: 1px solid #f6f6f6;
+                    position: relative;
+                    &:hover .addShop{
+                        opacity: 1;
+                        transition: 1s;
+                    }
+                    div{
+                        width: 52px;
+                        height: 22px;
+                        line-height: 22px;
+                        text-align: center;
+                        background-color: red;
+                        position: absolute;
+                        top:11px;
+                        left: 11px;
+                        color:#fff;
+                        font-size: 10px;
+                    }
+                    .contain-list-bg img{
+                        width: 268px;
+                        height: 335px;
+                    }
+                    .contain-list-word{
+                        display: block;
+                        margin-top: 25px;
+                        font-size: 12px;
+                        color: #333333;
+                        widows: 180px;
+                        height: 14px;
+                        &:hover{
+                            color:red;
+                            text-decoration: none;
+                        }
+                    }
+                    .star{
+                        width: 103px;
+                        height: 15px;
+                        margin: 0 auto;
+                        margin-top: 12px;
+                        margin-bottom: 15px;
+                        color:rgb(226, 19, 105);
+                    }
+                    .price{
+                        font-size: 12px;
+                        color: #333333;
+                        span{
+                            text-decoration:line-through;
+                            color:#8e8e91;
+                        }
+                    }
+                    .addShop{
+                        width: 128px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: space-between;
+                        position: absolute;
+                        left: 70px;
+                        top: 145px;
+                        opacity: 0;
+                        li{
+                            background-color: #fff;
+                            width: 40px;
+                            height: 40px;
+                            line-height: 40px;
+                            text-align: center;
+                            a{
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                color:#000000;
+                                &:hover{
+                                    background-color: red;
+                                    color:#fff;
+                                    transition: 1s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .page{
+                margin-top: 50px;
+                margin-left: 43%;
+            }
+        }
+    }
+
+}

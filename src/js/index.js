@@ -23,9 +23,9 @@ require(["config"],() => {
                 })
             }
             renderType (list) {
-                //console.log(template);
-                //console.log(list);
-                let html = template("#list-monopoly",{"list":list});
+                console.log(template);
+                console.log(list);
+                let html = template("list-shop",{list});
                 //console.log(html)
                 $("#list-contain").html(html);
             }

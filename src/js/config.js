@@ -6,6 +6,13 @@ require.config({
         "footer" : "js/module/footer",
         "tools" : "libs/tools",
         "url" : "js/module/url",
-        "template" : "libs/art-template/template-web"
+        "template" : "libs/art-template/template-web",
+        "cookie" : "libs/jquery-plugins/jquery.cookie"
+    },
+    //写垫片，为了给不满足AMD规范的插件又要依赖别的模块
+    shim : {
+        "cookie" : {
+            deps: ['jquery']
+        }
     }
 })
