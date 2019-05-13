@@ -1,0 +1,434 @@
+@import "../libs/bootstrap/css/bootstrap.min.css";
+@import "module/base.scss";
+@import "module/header.scss";
+@import "module/iconfont.css";
+@import "module/footer.scss";
+main{
+    margin-top: 96px;
+    .shopCart{
+        width: 1190px;
+        //height: 390px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        .left{
+            width: 882px;
+            //height: 390px;
+            .list-header{
+                padding-left: 6px;
+                line-height: 45px;
+                height: 45px;
+                background: #efefef;
+                font-size: 12px;
+                font-weight: bold;
+                input{
+                    float: left;
+                    margin-right: 5px;
+                    margin-top: 16px;
+                }
+                span{
+                    margin-left: 320px;
+                }
+                i{
+                    font-style: normal;
+                    margin-left: 90px;
+                }
+                b{
+                    font-weight: normal;
+                    margin-left: 87px;
+                }
+                em{
+                    font-style: normal;
+                    margin-left: 90px; 
+                }
+            }
+            .shop-list{
+                position: relative;
+                width: 882px;
+                li{
+                    padding-left: 10px;
+                    display: flex;
+                    height: 120px;
+                    border-bottom: 1px solid #e2e2e2;
+                    align-items: center;
+                    img{
+                        width: 90px;
+                        height: 90px;
+                        margin-left: 60px;
+                        margin-right: 360px;
+                    }
+                    .introduce{
+                        position: absolute;
+                        left: 200px;
+                        h4{
+                            line-height: 24px;
+                            color: #333;
+                            font-size: 14px;
+                        }
+                        p{
+                            color: #999;
+                            line-height: 20px;
+                            font-size: 12px;
+                        }
+                    }
+                    .price{
+                        position: absolute;
+                        left: 425px;
+                        font-size: 14px;
+                    }
+                    .num{
+                        width: 88px;
+                        height: 28px;
+                        display: flex;
+                        border: 1px solid #cacaca;
+                        border-radius: 2px;
+                        margin-right: 145px;
+                        input{
+                            border: none;
+                            width: 50px;
+                            text-align: center;
+                            border-left: 1px solid #cacaca;
+                            border-right: 1px solid #cacaca;
+                        }
+                        span{
+                            cursor: pointer;
+                            text-align: center;
+                            line-height: 28px;
+                            background-color: #ededed;
+                            flex: 1;
+                        }
+                    }
+                    .subtotal{
+                        font-size: 14px;
+                        color: #666;
+                        position: absolute;
+                        left: 670px;
+                    }
+                    .operate{
+                        color: #666;
+                        font-size: 14px;
+                        span{
+                            cursor: pointer;
+                            margin-left: 7px;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+            .list-footer{
+                display: flex;
+                justify-content: space-between;
+                width: 882px;
+                height: 44px;
+                border-bottom: 1px solid #e2e2e2;
+                .continue{
+                    height: 43px;
+                    line-height: 43px;
+                    font-size: 12px;
+                    .check-footer{
+                        float: left;
+                        margin-top: 16px;
+                        margin-right: 5px;
+                        margin-left: 10px;
+                    }
+                    a{
+                        font-size: 14px;
+                        color: #ed3029;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .cleanCart{
+                    margin-right: 70px;
+                    cursor: pointer;
+                    line-height: 43px;
+                    height: 43px;
+                    color: #999;
+                    font-size: 12px;
+                    text-indent: 44px;
+                    background: url(/img/delete.jpg) no-repeat 28px center;
+                    &:hover{
+                        text-decoration: underline;
+                        color: red;
+                    }
+                }
+            }
+        }
+        .right{
+            position: fixed;
+            top: 96px;
+            right: 4%;
+            z-index: 10;
+            box-sizing: border-box;
+            border: 1px solid #bababa;
+            border-top: 3px solid #fa322c;
+            width: 276px;
+            height: 323px;
+            background: #efefef;
+            .title{
+                font-size: 16px;
+                font-weight: blod;
+                letter-spacing: 1.5;
+                height: 42px;
+                line-height: 55px;
+                padding-left: 33px;
+                i{
+                    font-size: 16px;
+                    color:#000000;
+                }
+            }
+            .bottom{
+                box-sizing: border-box;
+                padding: 0 10px;
+                margin: 0 auto;
+                width: 266px;
+                background: #fff;
+                .satisfy{
+                    span{
+                        color:#ed3029;
+                        height: 26px;
+                        line-height: 26px;
+                        font-size: 12px;
+                    }
+                    .nosatisfy{
+                        margin-left: 5px;
+                        color: #000;
+                    }
+                }
+                .noShop{
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #fff;
+                    position: relative;
+                    img{
+                        position: absolute;
+                        left: 25px;
+                        top: -4px;
+                    }
+                    .dissSatisfy{
+                        width: 152px;
+                        height: 26px;
+                        line-height: 26px;
+                        background-color: #00a988;
+                        text-align: center;
+                        font-size: 12px;
+                        position: relative;
+                        .first-span{
+                            display: block;
+                            width: 56px;
+                            height: 26px;
+                            background-color: #008c72;
+                        }
+                        a{
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 96px;
+                            height: 26px;
+                            color: #ffffff;
+                            background-color: red;
+                        }
+
+                    }
+                }
+                .count{
+                    margin-top: 10px;
+                    height: 12px;
+                    line-height: 12px;
+                    color: #666;
+                    font-size: 12px;
+                }
+                .money{
+                    height: 12px;
+                    line-height: 12px;
+                    color: #666;
+                    font-size: 12px;
+                    span{
+                        color:#ed3029;
+                        font-size: 16px;
+                    }
+                }
+                .settlement{
+                    cursor: pointer;
+                    margin-top: 15px;
+                    height: 46px;
+                    line-height: 46px;
+                    color: #FFF;
+                    //display: block;
+                    background: #ed3029;
+                    font-size: 18px;
+                    text-align: center;
+                }
+                .promise{
+                    width: 190px;
+                    height: 66px;
+                    margin-top: 20px;
+                    color: #666;
+                    font-size: 12px;
+                    position: relative;
+                    .promise-p{
+                        text-align: center;
+                        height: 66px;
+                        line-height: 66px;
+                        width: 60px;
+                        border-right: 1px solid #e3e1e1;
+                    }
+                    div{
+                        width: 130px;
+                        height: 66px;
+                        position: absolute;
+                        top: 0;
+                        left: 64px;
+                        p{
+                            padding-left: 10px;
+                            padding-top: 6px;
+                            height: 12px;
+                            line-height: 12px;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+        .correlation{
+            margin-top: 50px;
+            width: 882px;
+            height: 550px;
+            //background-color: palegoldenrod;
+            p{
+                font-size: 16px;
+                color:#333333;
+                margin-top: 25px;
+                font-weight: bold;
+            }
+            ul{
+                width: 100%;
+                height: 454px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: space-between;
+                li{
+                    width: 268px;
+                    height: 454px;
+                    text-align: center;
+                    border: 1px solid #f6f6f6;
+                    position: relative;
+                    &:hover .addShop{
+                        opacity: 1;
+                        transition: 1s;
+                    }
+                    div{
+                        width: 52px;
+                        height: 22px;
+                        line-height: 22px;
+                        text-align: center;
+                        background-color: red;
+                        position: absolute;
+                        top:11px;
+                        left: 11px;
+                        color:#fff;
+                        font-size: 10px;
+                    }
+                    .correlation-bg img{
+                        width: 268px;
+                        height: 335px;
+                        transform: scale(1);
+                        transition: 0.5s;
+                        &:hover{
+                            transform: scale(1.1);
+                            transition: 0.5s;
+                        }
+                    }
+                    .correlation-word{
+                        display: block;
+                        margin-top: 25px;
+                        font-size: 12px;
+                        color: #333333;
+                        widows: 180px;
+                        height: 14px;
+                        &:hover{
+                            color:red;
+                            text-decoration: none;
+                        }
+                    }
+                    .correlation-star{
+                        width: 103px;
+                        height: 15px;
+                        margin: 0 auto;
+                        margin-top: 12px;
+                        margin-bottom: 15px;
+                        color:rgb(226, 19, 105);
+                    }
+                    .correlation-price{
+                        font-size: 12px;
+                        color: #333333;
+                        span{
+                            text-decoration:line-through;
+                            color:#8e8e91;
+                        }
+                    }
+                    .addShop{
+                        width: 128px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: space-between;
+                        position: absolute;
+                        left: 70px;
+                        top: 145px;
+                        opacity: 0;
+                        li{
+                            background-color: #fff;
+                            width: 40px;
+                            height: 40px;
+                            line-height: 40px;
+                            text-align: center;
+                            a{
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                color:#000000;
+                                &:hover{
+                                    background-color: red;
+                                    color:#fff;
+                                    transition: 1s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        .official{
+            width: 800px;
+            height: 35px;
+            margin-left: 40px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                width: 180px;
+                height: 35px;
+                line-height: 35px;
+                color: #000;
+                font-size: 14px;
+                //float: left;
+                span{
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    background-color: red;
+                    border-radius: 50%;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #fff;
+                    float: left;
+                    margin-right: 5px;
+                }
+            }
+        } 
+    }
+    
+}

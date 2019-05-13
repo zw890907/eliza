@@ -63,6 +63,58 @@ data ： {
 
 }
 
+##### 列表页接口
+
+url : (后台) http://www.porn.com/api/v1/list/type
+
+method : get
+
+data ： {
+
+​	res_code : 1, // 1代表成功，0代表失败,
+
+​	res_message : "添加成功" || "网络错误，添加失败，请重试",
+
+​	res_body : {
+
+​		list : [
+
+​			{id,name,price,num},
+
+​			{id,name,price,num}
+
+​		]
+
+​	}
+
+}
+
+##### 详情页接口
+
+url : (后台) http://www.porn.com/api/v1/detail/type
+
+method : get
+
+data ： {
+
+​	res_code : 1, // 1代表成功，0代表失败,
+
+​	res_message : "添加成功" || "网络错误，添加失败，请重试",
+
+​	res_body : {
+
+​		data : [
+
+​			{id},
+
+​			{id,name,price,num}
+
+​		]
+
+​	}
+
+}
+
 ##### 查询所有数据
 
 * url : api/v1/select.php
@@ -97,7 +149,7 @@ data ： {
 
 * method : get
 
-* query : {name,price,num}
+* query : {id}
 
 * data : {
 

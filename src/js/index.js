@@ -6,6 +6,8 @@ require(["config"],() => {
             constructor () {
                 this.bindEvents();
                 this.getType();
+                this.banner();
+                this.toggleButton();
             }
             bindEvents () {
                 $("#header").on('click',"#login",() => {
@@ -23,13 +25,86 @@ require(["config"],() => {
                 })
             }
             renderType (list) {
-                console.log(template);
-                console.log(list);
+                //console.log(template);
+                //console.log(list);
                 let html = template("list-shop",{list});
-                //console.log(html)
+                //console.log(html);
                 $("#list-contain").html(html);
+            }
+            //轮播图切换事件
+            banner(){
+                this.contain = document.querySelector(".slideshow"),
+                this.ul = this.contain.querySelector("ul"),
+                this.imgs = this.ul.children,
+                this.btns = Array.from(this.contain.querySelector("ol").children),
+                this.prev = this.contain.querySelector(".goPrev"),
+                this.next = this.contain.querySelector(".goNext"),
+                this.index = 0,
+                this.lastIndex = 0,
+                this.timer = null;
+                this.autoPlay();
+                //console.log(this.next);
+                //给点击按钮绑事件
+                this.btns.forEach((btn,i) => {
+                    btn.onclick = () => {
+                        this.index = i;
+                        this.changeImg();
+                    }
+                })
+                //前后按钮切换事件
+                this.prev.onclick = () => {
+                    this.index--;
+                    if(this.index < 0){
+                        this.index = this.btns.length - 1;
+                    }
+                    this.changeImg();
+                }
+                this.next.onclick = () => {
+                    this.index++;
+                    if(this.index === this.btns.length){
+                        this.index = 0;
+                    }
+                    this.changeImg();
+                }
+                
+                //鼠标移入和移出事件
+                this.contain.onmouseenter = () => {
+                    clearInterval(this.timer);
+                }
+                this.contain.onmouseleave = this.autoPlay.bind(this);
+            }
+            //自动切换方法
+            autoPlay(){
+                this.timer = setInterval(() => {
+                    this.next.onclick();
+                },2000)
+            }
+            changeImg(){
+                this.btns[this.lastIndex].classList.remove("ac");
+                this.imgs[this.lastIndex].classList.remove("ac");
+                this.btns[this.index].classList.add("ac");
+                this.imgs[this.index].classList.add("ac");
+                this.lastIndex = this.index;
+            }
+            //商品列表切换事件
+            toggleButton(){
+                //let tButton = $("#switch");
+                let tbtns = document.querySelector("#switch").children;
+                let lastIndex = 1,
+                    index = 0;
+                //console.log(tButton);
+                //console.log(this.tbtns);
+                Array.from(tbtns).forEach((btn,i) => {
+                    btn.onclick = () => {
+                        index = i;
+                        tbtns[lastIndex].classList.remove("contain-allShop-ac");
+                        tbtns[index].classList.add("contain-allShop-ac");
+                        lastIndex = index;
+                        this.getType();
+                    }
+                })
             }
         }
         new Index();
     })
-})
+}) 

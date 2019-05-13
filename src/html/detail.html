@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eliza-商品详情</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+    <!-- header容器 -->
+    <header id="header"></header>
+    <main>
+        <div class="banner"></div>
+        <div class="wrap" id="shopDetail"></div>
+        <script type="text/html" id="shop-detail">
+            <div class="bigPicture">
+                <img class="big-img" src="{{data.images[0]}}" data-zoom-image="{{data.images[0]}}"/>
+            </div>
+            <div class="minPicture" id="minPicture">
+                <ul class="min-img">
+                    <li class="current">
+                        <a href="javascript:;" data-image="{{data.images[0]}}" data-zoom-image="{{data.images[0]}}">
+                            <img class="s" src="{{data.images[0]}}" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-image="{{data.images[1]}}" data-zoom-image="{{data.images[1]}}">
+                        <img class="s" src="{{data.images[1]}}" /></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-image="{{data.images[2]}}" data-zoom-image="{{data.images[2]}}">
+                        <img class="s" src="{{data.images[2]}}" /></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-image="{{data.images[3]}}" data-zoom-image="{{data.images[3]}}">
+                        <img class="s" src="{{data.images[3]}}" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <h4 class="title">{{data.title}}</h4>
+                <p class="price">${{data.price}} <span>${{data.minPrice}}</span></p>
+                <div class="star">
+                    <p>{{data.string}}</p>
+                    <span><a href="javascript:;">{{data.num}}评论</a></span>
+                </div>
+                <p class="explain">{{data.word}}</p>
+                <p class="model first-model">- 0.5毫米的尾巴</p>
+                <p class="model">- 灵感的矢量图标</p>
+                <p class="model">- 非常现代的风格</p>
+                <div class="middle">
+                    <div class="middleTop">
+                        <div class="middleTop-left">
+                            <h5>颜色</h5>
+                            <ul>
+                                <li class="color-1"><a href="javascript:;"></a></li>
+                                <li class="color-2"><a href="javascript:;"></a></li>
+                                <li class="color-3"><a href="javascript:;"></a></li>
+                                <li class="color-4"><a href="javascript:;"></a></li>
+                                <li class="color-5"><a href="javascript:;"></a></li>
+                            </ul>
+                        </div>
+                        <div class="middleTop-right">
+                            <h5>尺寸</h5>
+                            <ul>
+                                <li><a href="javascript:;">S</a></li>
+                                <li><a href="javascript:;">M</a></li>
+                                <li><a href="javascript:;">XL</a></li>
+                                <li><a href="javascript:;">XXL</a></li>
+                                <li><a href="javascript:;">L</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="middleDown">
+                        <div class="additive">
+                            <a href="javascript:;" class="prev">-</a>
+                            <span>1</span>
+                            <a href="javascript:;" class="next">+</a>
+                        </div>
+                        <button>添加购物车</button>
+                        <div class="minIcon">
+                            <a href="javascript:;"><i title="加入愿望清单" class="iconfont icon-xin"></i></a>
+                            <a href="javascript:;"><i title="加入对比" class="iconfont icon-xunhuan"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="classify">
+                    分类:
+                    <span><a href="javascript:;">休闲</a></span>
+                    <span><a href="javascript:;">时尚</a></span>
+                    <span><a href="javascript:;">贴身</a></span>
+                </p>
+                <p class="tags">
+                    标签:
+                    <span><a href="javascript:;">衣服</a></span>
+                    <span><a href="javascript:;">鞋子</a></span>
+                    <span><a href="javascript:;">裤子</a></span>
+                </p>
+            </div>
+        </script>
+            
+
+        <div class="correlation">
+            <h3>相关商品</h3>
+            <p>亲爱的客官，这里还有很多好的商品哟！！！</p>
+            <ul>
+                <li>
+                    <a href="javascript:;" class="correlation-bg"><img src="/images/hm1-pro-8.jpg"/></a>
+                    <a href="javascript:;" class="correlation-word">卫衣--19春夏国际校服推荐</a>
+                    <p class="correlation-star"><img src="/images/btn-3.gif"/></p>
+                    <p class="correlation-price">￥88.00 - <span>￥128.00</span></p>
+                    <ul class="addShop">
+                        <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="correlation-bg"><img src="/images/hm1-pro-7.jpg"/></a>
+                    <a href="javascript:;" class="correlation-word">卫衣--19春夏国际校服推荐</a>
+                    <p class="correlation-star"><img src="/images/btn-3.gif"/></p>
+                    <p class="correlation-price">￥88.00 - <span>￥128.00</span></p>
+                    <div>新品</div>
+                    <ul class="addShop">
+                        <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="correlation-bg"><img src="/images/hm1-pro-6.jpg"/></a>
+                    <a href="javascript:;" class="correlation-word">卫衣--19春夏国际校服推荐</a>
+                    <p class="correlation-star"><img src="/images/btn-3.gif"/></p>
+                    <p class="correlation-price">￥88.00 - <span>￥128.00</span></p>
+                    <ul class="addShop">
+                        <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                        <li><a href="/html/cart.html"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="correlation-bg"><img src="/images/hm1-pro-5.jpg"/></a>
+                    <a href="javascript:;" class="correlation-word">卫衣--19春夏国际校服推荐</a>
+                    <p class="correlation-star"><img src="/images/btn-3.gif"/></p>
+                    <p class="correlation-price">￥88.00 - <span>￥128.00</span></p>
+                    <div>新品</div>
+                    <ul class="addShop">
+                        <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <!-- footerr容器 -->
+    <footer id="footer"></footer>
+    <script src="/libs/requirejs/require.min.js" data-main="/js/detail.js"></script>
+</body>
+</html>

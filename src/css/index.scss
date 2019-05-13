@@ -3,20 +3,6 @@
 @import "module/header.scss";
 @import "module/iconfont.css";
 @import "module/footer.scss";
-*{
-    margin: 0;
-    padding: 0;
-}
-ul,ol li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-html,body{
-	width: 100%;
-    height: 100%;
-}
 main{
     width: 100%;
     
@@ -27,8 +13,14 @@ main .slideshow{
     overflow:hidden; 
     position:relative;
     margin-top: 80px;
-    &:hover .goPrev,.goNext{
-        display: block;
+    &:hover{
+        .goPrev{
+            display: block;
+        }
+        .goNext{
+            display: block;
+        }
+        
     }
     .slideshow-word{
         position: absolute;
@@ -67,16 +59,17 @@ main .slideshow{
     }
     ul li{
         height:600px;
-        opacity: 0;
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 0;
-        transition: opacity 1s;
+        img{
+            opacity: 0;
+            z-index: 0;
+        }
     }
-    ul li.ac{
-        z-index: 2;
+    ul .ac img{
         opacity: 1;
+        transition: opacity 2s;
     }
     ol{
         position:absolute;
@@ -93,7 +86,7 @@ main .slideshow{
             border-radius: 50%;
             cursor: pointer;
         }
-        li.ac{
+        .ac{
             background: red;
         }
     }
@@ -139,9 +132,16 @@ main .contain{
             width: 400px;
             height: 224px;
             position: relative;
+            overflow: hidden;
             img{
                 width: 400px;
-                height: 224px;  
+                height: 224px;
+                transform: scale(1);
+                transition: 0.5s;
+                &:hover{
+                    transform: scale(1.1);
+                    transition: 0.5s;
+                }  
             }
             .contain-top-word{
                 position: absolute;
@@ -197,6 +197,7 @@ main .contain{
                 background-color: #f1f1f1;
                 a{
                     color:#383333;
+                    text-decoration: none;
                 }
             }
             .contain-allShop-ac{
@@ -294,6 +295,7 @@ main .contain{
                             width: 40px;
                             height: 40px;
                             color:#000000;
+                            text-decoration: none;
                             &:hover{
                                 background-color: red;
                                 color:#fff;
@@ -370,6 +372,13 @@ main .blogs{
             .blogs-img img{
                 width: 370px;
                 height: 230px;
+                transform: scale(1);
+                transition: 1s;
+                &:hover{
+                    box-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.5);
+                    transform: scale(1.1);
+                    transition: 1s;
+                }
             }
             .i-word{
                 font-size: 12px;
