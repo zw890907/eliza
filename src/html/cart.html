@@ -12,7 +12,10 @@
     <header id="header"></header>
     <main>
         <div class="shopCart">
-            <div class="left">
+            <div class="no-shop" id="no-shop">
+                还没有商品哟，快去<a href="/html/list.html">逛逛</a>吧！
+            </div>
+            <div class="left" id="left">
                 <div class="list-header">
                     <input type="checkbox" class="allCheck" checked="checked">全选&nbsp;&nbsp;商品数量
                     <span>单价(元)</span>
@@ -20,12 +23,37 @@
                     <b>小计</b>
                     <em>操作</em>
                 </div>
-                <ul class="shop-list">
-                    <li>
+                <ul class="shop-list" id="shop-list"></ul>
+                    <script type="text/html" id="detail-template">
+                        {{each data item}}
+                            <li data-id="{{item.id}}">
+                                <input type="checkbox" class="check" checked="checked">
+                                <img src="{{item.images[0]}}">
+                                <div class="introduce">
+                                    <h4><a href="javascript:;">{{item.title}}</a></h4>
+                                    <p>颜色：彩色</p>
+                                    <p>尺码：均码</p>
+                                </div>
+                                <div class="price">￥{{item.price}}</div>
+                                <div class="num">
+                                    <span class="reduceNum">-</span>
+                                    <input type="text" value="{{item.num}}" class="inputNum">
+                                    <span class="addNum">+</span>
+                                </div>
+                                <div class="subtotal">￥{{item.price*item.num}}</div>
+                                <div class="operate">
+                                    <span class="delete">删除</span>
+                                    <span class="collect">收藏</span>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </script>
+                    
+                    <!-- <li>
                         <input type="checkbox" class="check" checked="checked">
                         <img src="/images/product-detalis-s1.jpg">
                         <div class="introduce">
-                            <h4>送披萨的小姐姐 希维尔 手办</h4>
+                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
                             <p>颜色：彩色</p>
                             <p>尺码：均码</p>
                         </div>
@@ -45,7 +73,7 @@
                         <input type="checkbox" class="check" checked="checked">
                         <img src="/images/product-detalis-s1.jpg">
                         <div class="introduce">
-                            <h4>送披萨的小姐姐 希维尔 手办</h4>
+                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
                             <p>颜色：彩色</p>
                             <p>尺码：均码</p>
                         </div>
@@ -65,7 +93,7 @@
                         <input type="checkbox" class="check" checked="checked">
                         <img src="/images/product-detalis-s1.jpg">
                         <div class="introduce">
-                            <h4>送披萨的小姐姐 希维尔 手办</h4>
+                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
                             <p>颜色：彩色</p>
                             <p>尺码：均码</p>
                         </div>
@@ -80,28 +108,8 @@
                             <span class="delete">删除</span>
                             <span class="collect">收藏</span>
                         </div>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="check" checked="checked">
-                        <img src="/images/product-detalis-s1.jpg">
-                        <div class="introduce">
-                            <h4>送披萨的小姐姐 希维尔 手办</h4>
-                            <p>颜色：彩色</p>
-                            <p>尺码：均码</p>
-                        </div>
-                        <div class="price">￥150.00</div>
-                        <div class="num">
-                            <span class="reduceNum">-</span>
-                            <input type="text" value="1" class="inputNum">
-                            <span class="addNum">+</span>
-                        </div>
-                        <div class="subtotal">￥150</div>
-                        <div class="operate">
-                            <span class="delete">删除</span>
-                            <span class="collect">收藏</span>
-                        </div>
-                    </li>
-                </ul>
+                    </li> -->
+                
                 <div class="list-footer">
                     <div class="continue">
                         <input type="checkbox" class="allCheck check-footer" checked="checked">全选&nbsp;&nbsp;

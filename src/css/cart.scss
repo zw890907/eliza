@@ -10,6 +10,19 @@ main{
         //height: 390px;
         margin: 0 auto;
         margin-bottom: 40px;
+        .no-shop{
+            width: 882px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-style: italic;
+            font-size: 30px;
+            color: #db0f6e;
+            background:url(../images/bjt.jpg) no-repeat center;
+            background-size: 882px 300px;
+            display: none;
+        }
         .left{
             width: 882px;
             //height: 390px;
@@ -61,8 +74,13 @@ main{
                         left: 200px;
                         h4{
                             line-height: 24px;
-                            color: #333;
                             font-size: 14px;
+                            a{
+                                color: #333;
+                                &:hover{
+                                    color: red;
+                                }
+                            }
                         }
                         p{
                             color: #999;
