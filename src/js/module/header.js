@@ -5,6 +5,7 @@ define(['jquery','cookie'], $ => {
       this.load().then(() => {
         this.search();
         this.isLogin();
+        this.calcCartNum();
       });
     }
     // 对象合并
@@ -78,6 +79,23 @@ define(['jquery','cookie'], $ => {
                     this.loginOut.hide();
                 }
             })
+        },
+        calcCartNum(){
+            //console.log($("#cartNum"));
+            //取到存储的数据
+            let cart = localStorage.getItem('cart');
+            let count = 0;//没有商品数据时默认为0
+            if(cart){
+                //表示有数据,就算总数量（或者总类）
+                cart = JSON.parse(cart);
+                //以总数量为例
+                count = cart.reduce((n, shop) =>{
+                    n += shop.num;
+                    return n;
+                },0);
+            }
+            //有没有数据都要渲染
+            $("#cartNumber").html(count);
         }
     })
     return new Header();

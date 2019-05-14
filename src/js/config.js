@@ -8,7 +8,8 @@ require.config({
         "url" : "js/module/url",
         "template" : "libs/art-template/template-web",
         "cookie" : "libs/jquery-plugins/jquery.cookie",
-        "zoom" : "libs/jquery-plugins/jquery.elevateZoom-3.0.8.min"
+        "zoom" : "libs/jquery-plugins/jquery.elevateZoom-3.0.8.min",
+        "fly" : "libs/jquery-plugins/jquery.fly"
     },
     //写垫片，为了给不满足AMD规范的插件又要依赖别的模块
     shim : {
@@ -16,6 +17,9 @@ require.config({
             deps: ['jquery']
         },
         "zoom" : {
+            deps: ['jquery']
+        },
+        "fly" : {
             deps: ['jquery']
         }
     }

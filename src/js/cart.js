@@ -4,40 +4,10 @@ require(["config"],() => {
         //console.log(footer);
         class Cart{
             constructor(){
-                // this.shopList = $(".shop-list");
-                // this.delete = $(".delete");
-                // this.aCheck = $(".allCheck");
-                // this.check = $(".check");
-                // this.rNum = $(".reduceNum");
-                // this.aNum = $(".addNum");
-                // this.inputNum = $(".inputNum");
-                // this.subtotal = $(".subtotal");
-                // this.cleanCart = $(".cleanCart");
-                // this.count = $(".count");
-                // this.money = $(".money");
-                // this.settlement = $(".settlement");
-                //console.log(this.shopList);
-                //this.getType();
                 this.init();
                 this.bindEvents();
+                this.totalPrices();
             }
-            //获取分类数据
-            // getType () {
-            //     //ajax请求数据
-            //     $.get( url.rapBaseUrl + 'cart/get',data =>{
-            //         if(data.res_code === 1){
-            //             //console.log(data.res_body.data);
-            //             this.renderType(data.res_body.data);
-            //             // let list = data.res_body.list;
-            //             // let html = template("list-monopoly",{list});
-            //             // $("#shopList").html(html);
-            //         }
-            //     })
-            // }
-            // renderType (data) {
-            //     let html = template("detail-template",{data});
-            //     $("#shop-list").html(html);
-            // }
             init(){
                 let cart = localStorage.getItem('cart');
                 //console.log(cart);
@@ -47,7 +17,7 @@ require(["config"],() => {
                     this.render(cart);
                 }else{
                     //购物车为空
-                    console.log($("#no-shop"));
+                    //console.log($("#no-shop"));
                     $("#no-shop").show();
                     $("#left").hide();
                 }
@@ -57,11 +27,89 @@ require(["config"],() => {
                 $("#shop-list").html(html);
             }
             bindEvents(){
-                //给删除按钮绑事件
-                // this.delete.onclick = () =>{
-                //     let li = this.delete.parentNode.parentNode;
-                //     console.log(li);
-                // }
+                let num = $(".inputNum").val();
+                //console.log(subtotal);
+                //console.log(num);
+                //给增加和减少按钮绑事件
+                $("#left").on('click','#reduceNum',(e)=>{
+                    let target = e.target;
+                    num--;
+                    if(num < 1){
+                        num = 1;
+                    }
+                    $(target).next().val(num);
+                    let price = $(target).parent().prev().children("#price").html();
+                    let subtotalPrice = Number(num) * Number(price);
+                    let subtotal = $(target).parent().next().children("#subtotal");
+                    subtotal.html(subtotalPrice.toFixed(2));
+                })
+                $("#left").on('click','#addNum',(e)=>{
+                    let target = e.target;
+                    num++;
+                    $(target).prev().val(num);
+                    let price = $(target).parent().prev().children("#price").html();
+                    let subtotalPrice = Number(num) * Number(price);
+                    let subtotal = $(target).parent().next().children("#subtotal");
+                    subtotal.html(subtotalPrice.toFixed(2));
+                })
+                //删除按钮事件
+                $("#left").on('click','#delete',(e)=>{
+                    let target = e.target;
+                    let li = $(target).parent().parent();
+                    if(confirm("确定不要了吗？")){
+                        let id = Number($(li).attr("data-id"));
+                        //li.remove();
+                        let cart = localStorage.getItem('cart');
+                        
+                        cart = JSON.parse(cart);
+                        //console.log(cart);
+                        let index = -1;
+                        if(cart.some((item,i) => {
+                            //console.log(item.id);
+                            index = i;
+                            return item.id === id;
+                        })){
+                            $(li).remove();
+                            const newCart = [];
+                            cart.map((shop,a) =>{
+                                if(index === a){
+                                    
+                                }else{
+                                    cart.push(shop);
+                                }
+                            })
+                            localStorage.setItem('cart',JSON.stringify(cart));
+                        }
+                    }
+                    //this.init();
+                })
+                //清空购物车事件
+                $("#left").on('click','#cleanCart',()=>{
+                    //let target = e.target;
+                    if(confirm("警告！！！确定要清空购物车吗？")){
+                        localStorage.removeItem('cart');
+                    }
+                    this.init();
+                })
+                this.totalPrices();
+            }
+            //计算总数量和总价
+            totalPrices(){
+                let subtotal = document.querySelectorAll("#subtotal");
+                let inputNum = Array.from(document.querySelectorAll(".inputNum"));
+                let allNum = 0;
+                let allSubtotal = 0;
+                inputNum.forEach(input =>{
+                    allNum += Number(input.value);
+                })
+                subtotal.forEach(price =>{
+                    allSubtotal += Number(price.innerHTML);
+                })
+                //console.log(allNum);
+                $("#numCount").html(allNum);
+                $("#shopMoney").html(allSubtotal);
+                //console.log(inputNum);
+
             }
         }
         new Cart();

@@ -11,7 +11,7 @@
     <!-- header容器 -->
     <header id="header"></header>
     <main>
-        <div class="shopCart">
+        <div class="shopCart" id="shopCart">
             <div class="no-shop" id="no-shop">
                 还没有商品哟，快去<a href="/html/list.html">逛逛</a>吧！
             </div>
@@ -30,95 +30,34 @@
                                 <input type="checkbox" class="check" checked="checked">
                                 <img src="{{item.images[0]}}">
                                 <div class="introduce">
-                                    <h4><a href="javascript:;">{{item.title}}</a></h4>
+                                    <h4><a href="/html/detail.html?{{item.id}}">{{item.title}}</a></h4>
                                     <p>颜色：彩色</p>
                                     <p>尺码：均码</p>
                                 </div>
-                                <div class="price">￥{{item.price}}</div>
+                                <div class="price">￥<span id="price">{{item.price}}</span></div>
                                 <div class="num">
-                                    <span class="reduceNum">-</span>
+                                    <span class="reduceNum" id="reduceNum">-</span>
                                     <input type="text" value="{{item.num}}" class="inputNum">
-                                    <span class="addNum">+</span>
+                                    <span class="addNum" id="addNum">+</span>
                                 </div>
-                                <div class="subtotal">￥{{item.price*item.num}}</div>
+                                <div class="subtotal">￥<span id="subtotal">{{item.price*item.num}}</span></div>
                                 <div class="operate">
-                                    <span class="delete">删除</span>
+                                    <span class="delete" id="delete">删除</span>
                                     <span class="collect">收藏</span>
                                 </div>
                             </li>
                         {{/each}}
                     </script>
-                    
-                    <!-- <li>
-                        <input type="checkbox" class="check" checked="checked">
-                        <img src="/images/product-detalis-s1.jpg">
-                        <div class="introduce">
-                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
-                            <p>颜色：彩色</p>
-                            <p>尺码：均码</p>
-                        </div>
-                        <div class="price">￥150.00</div>
-                        <div class="num">
-                            <span class="reduceNum">-</span>
-                            <input type="text" value="1" class="inputNum">
-                            <span class="addNum">+</span>
-                        </div>
-                        <div class="subtotal">￥150</div>
-                        <div class="operate">
-                            <span class="delete">删除</span>
-                            <span class="collect">收藏</span>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="check" checked="checked">
-                        <img src="/images/product-detalis-s1.jpg">
-                        <div class="introduce">
-                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
-                            <p>颜色：彩色</p>
-                            <p>尺码：均码</p>
-                        </div>
-                        <div class="price">￥150.00</div>
-                        <div class="num">
-                            <span class="reduceNum">-</span>
-                            <input type="text" value="1" class="inputNum">
-                            <span class="addNum">+</span>
-                        </div>
-                        <div class="subtotal">￥150</div>
-                        <div class="operate">
-                            <span class="delete">删除</span>
-                            <span class="collect">收藏</span>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="check" checked="checked">
-                        <img src="/images/product-detalis-s1.jpg">
-                        <div class="introduce">
-                            <h4><a href="javascript:;">送披萨的小姐姐 希维尔 手办</a></h4>
-                            <p>颜色：彩色</p>
-                            <p>尺码：均码</p>
-                        </div>
-                        <div class="price">￥150.00</div>
-                        <div class="num">
-                            <span class="reduceNum">-</span>
-                            <input type="text" value="1" class="inputNum">
-                            <span class="addNum">+</span>
-                        </div>
-                        <div class="subtotal">￥150</div>
-                        <div class="operate">
-                            <span class="delete">删除</span>
-                            <span class="collect">收藏</span>
-                        </div>
-                    </li> -->
-                
+
                 <div class="list-footer">
                     <div class="continue">
                         <input type="checkbox" class="allCheck check-footer" checked="checked">全选&nbsp;&nbsp;
                         <a href="/html/list.html">继续购物</a>
                     </div>
-                    <div class="cleanCart">清空购物车</div>
+                    <div class="cleanCart" id="cleanCart">清空购物车</div>
                 </div>
             </div>
-            <div class="right">
+            <div class="right" id="right">
                 <p class="title">
                     <i class="iconfont icon-qicheqianlian-1-copy"></i>
                     我的购物车
@@ -132,8 +71,8 @@
                             <a href="/html/list.html">更多人气商品</a>
                         </p>
                     </div>
-                    <p class="count">商品数量：<span class="numCount">0</span></p>
-                    <p class="money">商品金额：<span class="shopMoney">￥150.00</span></p>
+                    <p class="count">商品数量：<span class="numCount" id="numCount">0</span></p>
+                    <p class="money">商品金额：￥<span class="shopMoney" id="shopMoney">150.00</span></p>
                     <p class="settlement">去结算</p>
                     <div class="promise">
                         <p class="promise-p">承诺</p>
@@ -191,7 +130,6 @@
             </div>
         </div>
 
-        
     </main>
     <!-- footerr容器 -->
     <footer id="footer"></footer>
