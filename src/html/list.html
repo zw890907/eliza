@@ -107,27 +107,28 @@
                     </ul>
                 </div>
             </aside>
-            <section>
+            <section id="section">
                 <!-- Single button -->
                 <div class="list-nav">
                     <select>
                         <option selected="">按价格排序</option>
                         <option>按新品排序</option>
                         <option>按数量排序</option>
-                        <option>按距离排序</option>
+                        <opt
+                        ion>按距离排序</option>
                     </select>
                     <p>显示20个结果中的1-9</p>
-                    <a href="javascript:;"><i class="iconfont icon-hengxian"></i></a>
-                    <a href="javascript:;" class="ac"><i class="iconfont icon-t_tianzige"></i></a>
+                    <a href="javascript:;" id="line"><i class="iconfont icon-hengxian"></i></a>
+                    <a href="javascript:;" class="ac" id="field"><i class="iconfont icon-t_tianzige"></i></a>
                 </div>
-                <ul id="shopList"></ul>
+                <ul id="shopList" class="shopList"></ul>
                 <script type="text/html" id="list-monopoly">
                     {{each list item}}
                         <li>
                             <a href="/html/detail.html?id={{item.id}}" class="contain-list-bg"><img src="{{item.image}}"/></a>
                             <a href="javascript:;" class="contain-list-word">{{item.title}}</a>
                             <p class="star">{{item.string}}</p>
-                            <p class="price">￥{{item.float}} - <span>￥{{item.price}}</span></p>
+                            <p class="price">￥{{item.minprice}} - <span>￥{{item.price}}</span></p>
                             <div>-{{item.num}}%</div>
                             <ul class="addShop">
                                 <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
@@ -137,6 +138,62 @@
                         </li>
                     {{/each}}
                 </script>
+                <div class="dis-box">
+                    <ul class="dis-list" id="dis-list">
+                        <li>
+                            <a href="javascript:;" class="dis-list-bg"><img src="/images/hm1-pro-5.jpg"/></a>
+                            <div class="dis-list-right">
+                                <a href="javascript:;" class="dis-list-title">卫衣--19春夏国际校服推荐</a>
+                                <p class="dis-list-star"><img src="/images/btn-3.gif"/></p>
+                                <p class="dis-list-price">￥88.00 - <span>￥128.00</span></p>
+                                <p class="dis-list-word">Lorem存有悲坐阿梅德，ELIT consectetum adipisic劳动和悲伤，她的时间以多年来所有incidid一些重要的事情</p>
+                                <div class="dis-list-addShop">
+                                    <p><a href="javascript:;">添加购物车</a></p>
+                                    <a href="javascript:;" class="dis-list-xin"><i class="iconfont icon-xin"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="dis-list-bg"><img src="/images/hm1-pro-6.jpg"/></a>
+                            <div class="dis-list-right">
+                                <a href="javascript:;" class="dis-list-title">卫衣--19春夏国际校服推荐</a>
+                                <p class="dis-list-star"><img src="/images/btn-3.gif"/></p>
+                                <p class="dis-list-price">￥88.00 - <span>￥128.00</span></p>
+                                <p class="dis-list-word">Lorem存有悲坐阿梅德，ELIT consectetum adipisic劳动和悲伤，她的时间以多年来所有incidid一些重要的事情</p>
+                                <div class="dis-list-addShop">
+                                    <p><a href="javascript:;">添加购物车</a></p>
+                                    <a href="javascript:;" class="dis-list-xin"><i class="iconfont icon-xin"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="dis-list-bg"><img src="/images/hm1-pro-7.jpg"/></a>
+                            <div class="dis-list-right">
+                                <a href="javascript:;" class="dis-list-title">卫衣--19春夏国际校服推荐</a>
+                                <p class="dis-list-star"><img src="/images/btn-3.gif"/></p>
+                                <p class="dis-list-price">￥88.00 - <span>￥128.00</span></p>
+                                <p class="dis-list-word">Lorem存有悲坐阿梅德，ELIT consectetum adipisic劳动和悲伤，她的时间以多年来所有incidid一些重要的事情</p>
+                                <div class="dis-list-addShop">
+                                    <p><a href="javascript:;">添加购物车</a></p>
+                                    <a href="javascript:;" class="dis-list-xin"><i class="iconfont icon-xin"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="dis-list-bg"><img src="/images/hm1-pro-8.jpg"/></a>
+                            <div class="dis-list-right">
+                                <a href="javascript:;" class="dis-list-title">卫衣--19春夏国际校服推荐</a>
+                                <p class="dis-list-star"><img src="/images/btn-3.gif"/></p>
+                                <p class="dis-list-price">￥88.00 - <span>￥128.00</span></p>
+                                <p class="dis-list-word">Lorem存有悲坐阿梅德，ELIT consectetum adipisic劳动和悲伤，她的时间以多年来所有incidid一些重要的事情</p>
+                                <div class="dis-list-addShop">
+                                    <p><a href="javascript:;">添加购物车</a></p>
+                                    <a href="javascript:;" class="dis-list-xin"><i class="iconfont icon-xin"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <nav aria-label="Page navigation" class="page">
                     <ul class="pagination">
                         <li>

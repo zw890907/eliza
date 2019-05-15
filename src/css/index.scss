@@ -53,6 +53,7 @@ main .slideshow{
             background: #000000;
             color:#fff;
             &:hover{
+                text-decoration: none;
                 background: red;
                 transition:1s;
             }

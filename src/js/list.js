@@ -6,6 +6,7 @@ require(["config"],() => {
             constructor () {
                 this.bindEvents();
                 this.getType();
+                
             }
             bindEvents () {
                 $("#header").on('click',"#login",() => {
@@ -17,17 +18,34 @@ require(["config"],() => {
                 //ajax请求数据
                 $.get( url.rapBaseUrl + 'list/type',data =>{
                     if(data.res_code === 1){
-                        console.log(data.res_body.list);
+                        //console.log(data.res_body.list);
                         this.renderType(data.res_body.list);
                         // let list = data.res_body.list;
                         // let html = template("list-monopoly",{list});
                         // $("#shopList").html(html);
+                        this.sceneChange();
                     }
                 })
             }
             renderType (list) {
                 let html = template("list-monopoly",{list});
                 $("#shopList").html(html);
+            }
+            sceneChange(){
+                // console.log($("#shopList"));
+                // console.log($("#section"));
+                $("#section").on('click','#line',()=>{
+                    $("#shopList").hide();
+                    $(".dis-box").show();
+                    $("#line").addClass('ac');
+                    $("#field").removeClass('ac');
+                })
+                $("#section").on('click','#field',()=>{
+                    $(".dis-box").hide();
+                    $("#shopList").show();
+                    $("#line").removeClass('ac');
+                    $("#field").addClass('ac');
+                })
             }
         }
         new List();

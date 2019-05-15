@@ -17,7 +17,7 @@
             </div>
             <div class="left" id="left">
                 <div class="list-header">
-                    <input type="checkbox" class="allCheck" checked="checked">全选&nbsp;&nbsp;商品数量
+                    <input type="checkbox" class="allCheck" id="allCheck" checked="checked">全选&nbsp;&nbsp;商品数量
                     <span>单价(元)</span>
                     <i>数量</i>
                     <b>小计</b>
@@ -27,7 +27,7 @@
                     <script type="text/html" id="detail-template">
                         {{each data item}}
                             <li data-id="{{item.id}}">
-                                <input type="checkbox" class="check" checked="checked">
+                                <input type="checkbox" class="check" id="check" checked="checked">
                                 <img src="{{item.images[0]}}">
                                 <div class="introduce">
                                     <h4><a href="/html/detail.html?{{item.id}}">{{item.title}}</a></h4>
@@ -50,8 +50,7 @@
                     </script>
 
                 <div class="list-footer">
-                    <div class="continue">
-                        <input type="checkbox" class="allCheck check-footer" checked="checked">全选&nbsp;&nbsp;
+                    <div class="continue">没找到满意的商品？
                         <a href="/html/list.html">继续购物</a>
                     </div>
                     <div class="cleanCart" id="cleanCart">清空购物车</div>
@@ -63,16 +62,21 @@
                     我的购物车
                 </p>
                 <div class="bottom">
-                    <p class="satisfy"><span>满199包邮</span><span class="nosatisfy">-您还未满足包邮条件</span></p>
+                    <p class="satisfy">
+                        <span>满699包邮</span>
+                        <span class="noSatisfy">-您还未满足包邮条件</span>
+                        <span class="yesSatisfy">-您已经满足包邮条件</span>
+                    </p>
                     <div class="noShop">
                         <img src="/images/btn-7.gif" alt="">
                         <p class="dissSatisfy">
                             <span class="first-span">未满足</span>
+                            <span class="dis-span">已满足</span>
                             <a href="/html/list.html">更多人气商品</a>
                         </p>
                     </div>
                     <p class="count">商品数量：<span class="numCount" id="numCount">0</span></p>
-                    <p class="money">商品金额：￥<span class="shopMoney" id="shopMoney">150.00</span></p>
+                    <p class="money">商品金额：￥<span class="shopMoney" id="shopMoney">0.00</span></p>
                     <p class="settlement">去结算</p>
                     <div class="promise">
                         <p class="promise-p">承诺</p>
