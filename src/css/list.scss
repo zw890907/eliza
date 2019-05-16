@@ -343,6 +343,9 @@ main{
                                     color:#fff;
                                     transition: 1s;
                                 }
+                                i{
+                                    font-size: 22px !important;
+                                }
                             }
                         }
                     }
@@ -459,10 +462,37 @@ main{
                     }
                 }
             }
-            
             .page{
                 margin-top: 50px;
-                margin-left: 43%;
+                margin-left: 38%;
+                .pagination{
+                    width: 200px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    .page-li{
+                        width: 40px;
+                        height: 40px;
+                        line-height: 28px;
+                        text-align: center;
+                        border-radius: 50%;
+                        color:peru;
+                        font-size: 20px;
+                        .prev-next{
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                            font-size: 35px;
+                            line-height: 20px;
+                            margin-left:-13px;
+                        }
+                        &:hover{
+                            background-color: red;
+                            color:#fff;
+                        }
+                    }
+                }
+                
             }
         }
     }

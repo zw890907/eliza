@@ -3,121 +3,208 @@
 @import "module/header.scss";
 @import "module/iconfont.css";
 @import "module/footer.scss";
-main{
+
+
+ main{
+    @-webkit-keyframes fadeIn {
+        0% {
+        opacity: 0; /*初始状态 透明度为0*/
+        }
+        25% {
+            opacity: 0.25; /*中间状态 透明度为0*/
+            }
+        50% {
+        opacity: 0.5; /*中间状态 透明度为0*/
+        }
+        75% {
+            opacity: 0.75; /*中间状态 透明度为0*/
+            }
+        100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+        }
+    }
     width: 100%;
-    
-}
-main .slideshow{
-    width:100%; 
-    height:600px; 
-    overflow:hidden; 
-    position:relative;
-    margin-top: 80px;
-    &:hover{
-        .goPrev{
-            display: block;
-        }
-        .goNext{
-            display: block;
-        }
-        
-    }
-    .slideshow-word{
-        position: absolute;
-        z-index: 6;
-        margin-left: 80px;
-        margin-top: 200px;
-        width: 200px;
-        height: 100px;
-        //opacity: 0;
-        p{
-            color: red;
-            font-size: 30px;
-            margin-bottom: 10px;
-            span{
-                font-style: italic;
-            }
-        }
-        h3{
-            font-weight: bold;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        a{
-            display: block;
-            width: 100px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            font-size: 12px;
-            background: #000000;
-            color:#fff;
-            &:hover{
-                text-decoration: none;
-                background: red;
-                transition:1s;
-            }
-        }
-    }
-    ul li{
+    .swiper-container{
+        width:100%; 
         height:600px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        img{
-            opacity: 0;
-            z-index: 0;
+        margin-top: 80px;
+        .slideshow-word{
+            -webkit-animation-name: fadeIn; /*动画名称*/
+            -webkit-animation-duration: 3500ms; /*动画持续时间*/
+            -webkit-animation-iteration-count: infinite; /*动画次数*/
+            -webkit-animation-delay: 0s; /*延迟时间*/
+            position: absolute;
+            z-index: 6;
+            margin-left: 100px;
+            margin-top: 200px;
+            width: 200px;
+            height: 100px;
+            p{
+                color: red;
+                font-size: 30px;
+                margin-bottom: 10px;
+                span{
+                    font-style: italic;
+                }
+            }
+            h3{
+                font-weight: bold;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+            a{
+                display: block;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 12px;
+                background: #000000;
+                color:#fff;
+                &:hover{
+                    text-decoration: none;
+                    background: red;
+                    transition:1s;
+                }
+            }
+        }
+        .swiper-wrapper{
+            width: 100%;
+            height: 600px;
+            img{
+                width: 100%;
+                height: 600px;
+            }
+        }
+        .swiper-pagination{
+            .swiper-pagination-bullet{
+                width: 15px;
+                height: 15px;
+                background-color: red;
+            }
+        }
+        .swiper-button-prev{
+            // width: 30px;
+            // height: 30px;
+            // background: rgba(0, 0, 0, 0.2);
+            color: #000000;
+        }
+        .swiper-button-next{
+
         }
     }
-    ul .ac img{
-        opacity: 1;
-        transition: opacity 2s;
-    }
-    ol{
-        position:absolute;
-        right: 50%;
-        bottom: 10px;
-        z-index:3;
-        margin-right: -20px;
-        li{
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            margin-left: 5px;
-            float: left;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .ac{
-            background: red;
-        }
-    }
-    &>a{
-        text-decoration: none;
-        position: absolute;
-        top: 50%;
-        margin-top: -20px;
-        height: 50px;
-        line-height: 40px;
-        text-align: center;
-        width: 50px;
-        font-size: 40px;
-        vertical-align: middle;
-        color: #fff;
-        background: rgba(0,0,0,0.2);
-        border-radius: 50%;
-        z-index:2;
-    }
-    .goPrev{
-        left: 10px;
-        display: none;
-    }
-    .goNext{
-        right: 10px;
-        display: none;
-    }
-    img{width:100%; height:600px;}
 }
+// main .slideshow{
+//     width:100%; 
+//     height:600px; 
+//     overflow:hidden; 
+//     position:relative;
+//     margin-top: 80px;
+//     &:hover{
+//         .goPrev{
+//             display: block;
+//         }
+//         .goNext{
+//             display: block;
+//         }
+        
+//     }
+//     .slideshow-word{
+//         position: absolute;
+//         z-index: 6;
+//         margin-left: 80px;
+//         margin-top: 200px;
+//         width: 200px;
+//         height: 100px;
+//         //opacity: 0;
+//         p{
+//             color: red;
+//             font-size: 30px;
+//             margin-bottom: 10px;
+//             span{
+//                 font-style: italic;
+//             }
+//         }
+//         h3{
+//             font-weight: bold;
+//             font-size: 40px;
+//             margin-bottom: 10px;
+//         }
+//         a{
+//             display: block;
+//             width: 100px;
+//             height: 50px;
+//             line-height: 50px;
+//             text-align: center;
+//             font-size: 12px;
+//             background: #000000;
+//             color:#fff;
+//             &:hover{
+//                 text-decoration: none;
+//                 background: red;
+//                 transition:1s;
+//             }
+//         }
+//     }
+//     ul li{
+//         height:600px;
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         img{
+//             opacity: 0;
+//             z-index: 0;
+//         }
+//     }
+//     ul .ac img{
+//         opacity: 1;
+//         transition: opacity 2s;
+//     }
+//     ol{
+//         position:absolute;
+//         right: 50%;
+//         bottom: 10px;
+//         z-index:3;
+//         margin-right: -20px;
+//         li{
+//             width: 10px;
+//             height: 10px;
+//             background: #fff;
+//             margin-left: 5px;
+//             float: left;
+//             border-radius: 50%;
+//             cursor: pointer;
+//         }
+//         .ac{
+//             background: red;
+//         }
+//     }
+//     &>a{
+//         text-decoration: none;
+//         position: absolute;
+//         top: 50%;
+//         margin-top: -20px;
+//         height: 50px;
+//         line-height: 40px;
+//         text-align: center;
+//         width: 50px;
+//         font-size: 40px;
+//         vertical-align: middle;
+//         color: #fff;
+//         background: rgba(0,0,0,0.2);
+//         border-radius: 50%;
+//         z-index:2;
+//     }
+//     .goPrev{
+//         left: 10px;
+//         display: none;
+//     }
+//     .goNext{
+//         right: 10px;
+//         display: none;
+//     }
+//     img{width:100%; height:600px;}
+// }
 main .contain{
     width: 1250px;
     //height: 1000px;
@@ -418,7 +505,6 @@ main .blogs{
     }
 }
 .back-top{
-    display: block;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -429,12 +515,11 @@ main .blogs{
     right: 20px;
     bottom: 60px;
     z-index: 6;
-    // &:hover i{
-
-    // }
-    i{
-        font-size: 20px !important;
-        color: #fff;
-        
+    a{
+        text-decoration: none;
+        i{
+            font-size: 20px !important;
+            color: #fff;
+        }
     }
 }

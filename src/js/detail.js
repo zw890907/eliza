@@ -15,6 +15,7 @@ require(["config"],() => {
                 $.get(url.rapBaseUrl + "detail/get",{id},result => {
                     if(result.res_code === 1){
                         let {data} = result.res_body;
+                        console.log(data);
                         //扩展运算添加属性（key:value)，并且id为解构赋值
                         //当为真是接口时，不需要下面这句代码
                         data = {...data,id};
@@ -72,7 +73,7 @@ require(["config"],() => {
                     //把this.data存到localstorage里
                     //先将localstorage中的cart取出来
                     let cart = localStorage.getItem("cart");
-                    console.log(cart);
+                    console.log(this.data);
                     //判断localstorage中是否有数据
                     
                     this.number = number;

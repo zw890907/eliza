@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>eliza</title>
+    <title>eliza-首页</title>
     <!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <!-- header -->
     <header id="header"></header>
     <main>
-        <div class="slideshow">
+        <!-- <div class="slideshow">
             <div class="slideshow-word">
                 <p>销售<span>30%</span></p>
                 <h3>新颖独特的<br/>产品</h3>
@@ -34,6 +35,26 @@
             </ol>
             <a href="javascript:;" class="goPrev">&laquo;</a>
             <a href="javascript:;" class="goNext">&raquo;</a>
+        </div> -->
+        <div class="swiper-container" id="swiper-container">
+            <div class="slideshow-word">
+                <p>销售<span>30%</span></p>
+                <h3>新颖独特的<br/>产品</h3>
+                <a href="/html/list.html">现在购物</a>
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="/html/list.html"><img src="/images/slide-1.jpg"/></a></div>
+                <div class="swiper-slide"><a href="/html/list.html"><img src="/images/slide-2.jpg"/></a></div>
+                <div class="swiper-slide"><a href="/html/list.html"><img src="/images/slide-3.jpg"/></a></div>
+                <div class="swiper-slide"><a href="/html/list.html"><img src="/images/slide-4.jpg"/></a></div>
+                <div class="swiper-slide"><a href="/html/list.html"><img src="/images/slide-5.jpg"/></a></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev swiper-button-black"></div>
+            <div class="swiper-button-next swiper-button-black"></div>
         </div>
         <div class="contain">
             <ul class="contain-top">
@@ -76,14 +97,14 @@
                     <ul>
                     {{each list item}}
                         <li>
-                            <a href="javascript:;" class="contain-list-bg"><img src="{{item.image}}"/></a>
-                            <a href="javascript:;" class="contain-list-word">{{item.title}}</a>
+                            <a href="/html/list.html" class="contain-list-bg"><img src="{{item.image}}"/></a>
+                            <a href="/html/list.html" class="contain-list-word">{{item.title}}</a>
                             <p class="star">{{item.string}}</p>
                             <p class="price">￥{{item.float}} - <span>￥{{item.price}}</span></p>
                             <div>-{{item.num}}%</div>
                             <ul class="addShop">
-                                <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
-                                <li><a href="/html/cart.html"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                                <li><a href="/html/cart.html"><i class="iconfont icon-hao"></i></a></li>
+                                <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
                                 <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
                             </ul>
                         </li>
@@ -129,9 +150,9 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="back-top">
-            <i class="iconfont icon-jiantou"></i>
-        </a>
+        <div class="back-top">
+            <a href="#"><i class="iconfont icon-jiantou"></i></a>
+        </div>
     </main>
     <footer id="footer"></footer>
     

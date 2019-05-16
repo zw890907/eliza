@@ -12,7 +12,7 @@
     <header id="header"></header>
     <main>
         <div class="banner"></div>
-        <div class="wrap">
+        <div class="wrap" id="wrap">
             <aside>
                 <div class="search">
                     <h3>搜索</h3>
@@ -26,17 +26,17 @@
                     <ul>
                         <li>
                             <input type="checkbox">
-                            <span><a href="javascript:;">出售</a></span>
+                            <span><a href="javascript:;">价格</a></span>
                             <span class="num"><a href="javascript:;">4</a></span>
                         </li>
                         <li>
                             <input type="checkbox">
-                            <span><a href="javascript:;">出售</a></span>
+                            <span><a href="javascript:;">库存</a></span>
                             <span class="num"><a href="javascript:;">5</a></span>
                         </li>
                         <li>
                             <input type="checkbox">
-                            <span><a href="javascript:;">出售</a></span>
+                            <span><a href="javascript:;">热销</a></span>
                             <span class="num"><a href="javascript:;">6</a></span>
                         </li>
                     </ul>
@@ -99,23 +99,22 @@
                 <div class="shopTag">
                     <h3>标签</h3>
                     <ul>
-                        <li><a href="javascript:;">标签</a></li>
-                        <li><a href="javascript:;">标签</a></li>
-                        <li><a href="javascript:;">标签</a></li>
-                        <li><a href="javascript:;">标签</a></li>
-                        <li><a href="javascript:;">标签</a></li>
+                        <li><a href="javascript:;">时尚</a></li>
+                        <li><a href="javascript:;">流行</a></li>
+                        <li><a href="javascript:;">畅销</a></li>
+                        <li><a href="javascript:;">达人</a></li>
+                        <li><a href="javascript:;">努力</a></li>
                     </ul>
                 </div>
             </aside>
             <section id="section">
                 <!-- Single button -->
-                <div class="list-nav">
+                <div class="list-nav" id="select-nav">
                     <select>
-                        <option selected="">按价格排序</option>
+                        <option selected="" >按价格排序</option>
                         <option>按新品排序</option>
                         <option>按数量排序</option>
-                        <opt
-                        ion>按距离排序</option>
+                        <option>按距离排序</option>
                     </select>
                     <p>显示20个结果中的1-9</p>
                     <a href="javascript:;" id="line"><i class="iconfont icon-hengxian"></i></a>
@@ -124,15 +123,19 @@
                 <ul id="shopList" class="shopList"></ul>
                 <script type="text/html" id="list-monopoly">
                     {{each list item}}
-                        <li>
+                        <li data-id="{{item.id}}">
                             <a href="/html/detail.html?id={{item.id}}" class="contain-list-bg"><img src="{{item.image}}"/></a>
                             <a href="javascript:;" class="contain-list-word">{{item.title}}</a>
                             <p class="star">{{item.string}}</p>
                             <p class="price">￥{{item.minprice}} - <span>￥{{item.price}}</span></p>
                             <div>-{{item.num}}%</div>
                             <ul class="addShop">
-                                <li><a href="javascript:;"><i class="iconfont icon-hao"></i></a></li>
-                                <li><a href="/html/detail.html?id={{item.id}}"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                                <li><a href="/html/detail.html?id={{item.id}}"><i class="iconfont icon-hao"></i></a></li>
+                                <li id="addShop-cart">
+                                    <a href="javascript:;">
+                                        <i class="iconfont icon-qicheqianlian-1-copy"></i>
+                                    </a>
+                                </li>
                                 <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
                             </ul>
                         </li>
@@ -197,15 +200,15 @@
                 <nav aria-label="Page navigation" class="page">
                     <ul class="pagination">
                         <li>
-                            <a href="javascript:;" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
+                            <a href="javascript:;" aria-label="Previous" class="page-li">
+                                <span aria-hidden="true" class="prev-next">&laquo;</span>
                             </a>
                         </li>
-                        <li><a href="javascript:;">1</a></li>
-                        <li><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;" class="page-li">1</a></li>
+                        <li><a href="javascript:;" class="page-li">2</a></li>
                         <li>
-                            <a href="javascript:;" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
+                            <a href="javascript:;" aria-label="Next" class="page-li">
+                                <span aria-hidden="true" class="prev-next">&raquo;</span>
                             </a>
                         </li>
                     </ul>

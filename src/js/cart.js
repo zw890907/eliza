@@ -70,7 +70,7 @@ require(["config"],() => {
                     num++;
                     $(target).prev().val(num);
                     let price = $(target).parent().prev().children("#price").html();
-                    let subtotalPrice = Number(num) * Number(price);
+                    let subtotalPrice = Number(num * price);
                     let subtotal = $(target).parent().next().children("#subtotal");
                     subtotal.html(subtotalPrice.toFixed(2));
                     let cart = localStorage.getItem('cart');
@@ -113,22 +113,21 @@ require(["config"],() => {
                             //     }
                             // })
                             cart = cart.filter((shop,a)=>{
-                                if(index !== a){
-                                    return shop;
-                                }
+                                return index !== a;
                             })
                             localStorage.setItem('cart',JSON.stringify(cart));
                             
-                            // let num = Number($("#cartNumber").html());
-                            // console.log(num);
-                            // if(num === 0){
-                            //     $("#no-shop").show();
-                            //     $("#left").hide();
-                            // }
                         }
-                        //this.totalPrices();
+                        
                     }
                     this.totalPrices();
+                    let num = Number($("#cartNumber").html());
+                    let cart = localStorage.getItem('cart');
+                    console.log(cart);
+                    if(num === 0){
+                        localStorage.removeItem('cart');
+                        this.init();
+                    }
                 })
                 //清空购物车事件
                 $("#left").on('click','#cleanCart',()=>{
