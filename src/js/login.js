@@ -20,6 +20,8 @@ require(["config"],() => {
                         success: data => {
                             if(data.res_code === 1){
                                 this.loginSucc(username);
+                            }else{
+                                alert(data.res_message);
                             }
                         },
                         dataType: 'json'
