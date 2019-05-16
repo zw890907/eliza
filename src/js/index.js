@@ -39,9 +39,28 @@ require(["config"],() => {
                 // }
             }
             bindEvents () {
-                $("#header").on('click',"#login",() => {
-                    console.log(123);
-                })
+                if ($('#back-top').length) {
+                    var scrollTrigger = 300;  //预设高度 
+        
+                    // $(window).scrollTop()与 $(document).scrollTop()产生结果一样
+                    // 一般使用document注册事件，window使用情况如 scroll, scrollTop, resize
+                    // 根据预设高度，显示 "回到顶部"
+                    $(window).on('scroll', function () {
+                        if ($(document).scrollTop() > scrollTrigger) {
+                            $('#back-top').addClass('show');
+                        } else {
+                            $('#back-top').removeClass('show');
+                        }
+                    });
+                }
+                $('#back-top').on('click', function (e) {
+                    // html,body 都写是为了兼容浏览器
+                    $('html,body').animate({
+                        scrollTop: 0
+                    }, 700);
+    
+                    return false;
+                });
             }
             //获取分类数据
             getType () {

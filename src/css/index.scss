@@ -504,7 +504,10 @@ main .blogs{
         }
     }
 }
-.back-top{
+#back-top.show{
+    opacity: 1;
+}
+#back-top{
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -515,6 +518,8 @@ main .blogs{
     right: 20px;
     bottom: 60px;
     z-index: 6;
+    opacity: 0;
+    transition: opacity .2s linear;
     a{
         text-decoration: none;
         i{
