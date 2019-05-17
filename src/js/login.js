@@ -6,8 +6,21 @@ require(["config"],() => {
                 this.passwordInput = $("#inputPassword");
                 this.check = $("#check");
                 this.btn = $("#btn");
-                //console.log(this.btn);
+                this.init();
                 this.bindEvents();
+            }
+            init(){
+                $("#inputUsername").val("");
+                $("#inputPassword").val("");
+                //取出cookie中的数据,转为json格式，用一个变量接收
+                //console.log(123);
+                let userInfo = $.cookie('name');
+                let pwdInfo = $.cookie('pwd');
+                //console.log(userInfo);
+                $("#inputUsername").val(userInfo);
+                $("#inputPassword").val(pwdInfo);
+                $.removeCookie('name',{ path: '/'});
+                $.removeCookie('pwd',{ path: '/'});
             }
             bindEvents(){
                 this.btn.on("click",() => {

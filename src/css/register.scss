@@ -11,7 +11,7 @@ ul,ol li{
     img{
         width: 100%;
         height: 100%;
-        opacity: 0.5;
+        // opacity: 0.5;
     }
 }
 .form-container{
@@ -54,6 +54,13 @@ ul,ol li{
                 }
             }
         }
+    }
+    .btn-default{
+        margin-left: 30px;
+        background-color: rgba(15, 26, 49, 0.575);
+        width: 80px;
+        height: 40px;
+        color:rgb(42, 51, 50);
     }
     .form-message{
         margin-left: 20px;

@@ -96,15 +96,15 @@
                 <script type="text/html" id="list-shop">
                     <ul>
                     {{each list item}}
-                        <li>
-                            <a href="/html/list.html" class="contain-list-bg"><img src="{{item.image}}"/></a>
+                        <li data-id="{{item.id}}" class="contain-list-li">
+                            <a href="/html/list.html" class="contain-list-bg"><img src="{{item.images[0]}}"/></a>
                             <a href="/html/list.html" class="contain-list-word">{{item.title}}</a>
                             <p class="star">{{item.string}}</p>
-                            <p class="price">￥{{item.float}} - <span>￥{{item.price}}</span></p>
+                            <p class="price">￥{{item.price}} - <span>￥{{item.float}}</span></p>
                             <div>-{{item.num}}%</div>
                             <ul class="addShop">
-                                <li><a href="/html/cart.html"><i class="iconfont icon-hao"></i></a></li>
-                                <li><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
+                                <li><a href="/html/detail.html"><i class="iconfont icon-hao"></i></a></li>
+                                <li id="addShop-cart"><a href="javascript:;"><i class="iconfont icon-qicheqianlian-1-copy"></i></a></li>
                                 <li><a href="javascript:;"><i class="iconfont icon-xin"></i></a></li>
                             </ul>
                         </li>

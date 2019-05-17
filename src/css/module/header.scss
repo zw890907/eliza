@@ -22,22 +22,26 @@ header{
     float: left;
   }
   .list{
-    width: 400px;
+    width: 500px;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 300px;
+    margin-left: 250px;
     li{
       width: 100px;
       height: 80px;
       line-height: 80px;
       text-align: center;
-      font-size: 12px;
+      font-size: 14px;
       position: relative;
-      &:hover .shop-list{
-        display: block;
-        //transition: 1s;
+      &:hover{
+        // background-color: rgb(153, 182, 172);
+        // border-radius: 10px;
+        .shop-list{
+          display: block;
+          //transition: 1s;
+        }
       }
       .list-a{
         color: #000000;
@@ -49,9 +53,9 @@ header{
       .shop-list{
         width: 150px;
         height: 200px;
-        background: #fff;
+        background: rgb(173, 170, 175);
         position: absolute;
-        left:30px;
+        left:20px;
         top: 80px;
         display: none;
         li{
@@ -92,19 +96,19 @@ header{
       border: 1px solid #cccccc;
       border-radius: 15px;
       line-height: 30px;
-      //margin-left: 40px;
+      margin-left: 40px;
       a{
         text-decoration: none;
       }
       i{
         font-size: 10px !important;
         color: #333333;
-        margin: auto 5px;
+        margin-left: 5px;
       }
       input{
         height: 20px;
         line-height: 20px;
-        width: 170px;
+        width: 166px;
         outline: none;
         border: none;
         color: #000000;
@@ -112,10 +116,12 @@ header{
       }
       #searchUl{
         position: absolute;
+        top:33px;
         z-index: 10;
         width: 200px;
+        border-radius: 10px;
         margin-top: 22px;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(2, 63, 12, 0.596);
         li{
           width: 200px;
           height: 30px;
@@ -130,7 +136,8 @@ header{
       }
     }
     .login{
-      margin-left: 50px;
+      width: 200px;
+      text-align: center;
       font-size: 14px;
       a{
         color:#000000;
@@ -141,6 +148,7 @@ header{
       }
     }
     .login-out{
+      width: 200px;
       margin-left: 50px;
       font-size: 14px;
       display: none;
@@ -153,7 +161,7 @@ header{
       }
     }
     .cart{
-      margin-left: 40px;
+      //margin-left: 40px;
       position: relative;
       a{
         display: block;

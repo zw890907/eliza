@@ -1,7 +1,6 @@
 define(['jquery','cookie'], $ => {
     function Header () {
       this.container = $("#header");
-      
       this.load().then(() => {
         this.search();
         this.isLogin();
@@ -23,7 +22,6 @@ define(['jquery','cookie'], $ => {
                 });
             })
         },
-  
         search () {
             // 搜索框功能
             // container内部所有的.search-form
@@ -36,8 +34,9 @@ define(['jquery','cookie'], $ => {
                 let keyWords = $(this).val();
                 // 带上关键字请求jsonp接口
                 $.getJSON('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=?&wd='+keyWords, data => {
+                    //console.log(data);    
                     let value = data.s;
-                    console.log(value);
+                    //console.log(value);
                     var html = "";
                     value.forEach(item => {
                         // let li = document.createElement("li");
@@ -58,6 +57,14 @@ define(['jquery','cookie'], $ => {
                     $("#search").val(target.innerHTML);
                     $("#searchUl").html("");
                 })
+                $(window).on('click',()=>{
+                    $("#searchUl").html("");
+                })
+                if (event.keyCode == 13){
+                    event.returnValue=false;
+                    event.cancel = true;
+                    location.href = "/html/list.html";
+                }
             })
         },
         isLogin () {

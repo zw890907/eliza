@@ -385,6 +385,9 @@ main .contain{
                             height: 40px;
                             color:#000000;
                             text-decoration: none;
+                            i{
+                                font-size: 23px !important;
+                            }
                             &:hover{
                                 background-color: red;
                                 color:#fff;

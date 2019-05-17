@@ -7,8 +7,6 @@ require(["config"],() => {
                 //console.log(this.check);
                 this.n = 0;
                 this.init();
-                //this.bindEvents();
-                this.totalPrices();
             }
             init(){
                 let cart = localStorage.getItem('cart');
@@ -19,7 +17,6 @@ require(["config"],() => {
                     this.render(cart);
                 }else{
                     //购物车为空
-                    //console.log($("#no-shop"));
                     $("#no-shop").show();
                     $("#left").hide();
                 }
@@ -116,30 +113,33 @@ require(["config"],() => {
                                 return index !== a;
                             })
                             localStorage.setItem('cart',JSON.stringify(cart));
-                            
-                        }
-                        
+                         }
                     }
                     this.totalPrices();
                     let num = Number($("#cartNumber").html());
-                    let cart = localStorage.getItem('cart');
-                    console.log(cart);
+                    //let cart = localStorage.getItem('cart');
+                    //console.log(cart);
                     if(num === 0){
                         localStorage.removeItem('cart');
                         this.init();
                     }
                 })
+
                 //清空购物车事件
                 $("#left").on('click','#cleanCart',()=>{
                     //let target = e.target;
+                    let li = $("#shop-list").find('li');
+                    //console.log(li);
                     if(confirm("警告！！！确定要清空购物车吗？")){
+                        $(li).remove();
                         localStorage.removeItem('cart');
                     }
-                    this.totalPrices();
+                    //console.log(li);
                     this.init();
+                    //this.totalPrices();
                 })
+                
                 //全选按钮事件
-                //console.log(this.check);
 	            $("#left").on('click','#allCheck',()=>{
                     this.check.forEach((item) => {
                         //console.log(item,'item');
@@ -150,11 +150,17 @@ require(["config"],() => {
                     //计算总价
                     this.totalPrices();
                 })
+
                 //单选按钮事件
                 this.check.forEach( (check) => {
                     check.onchange = () => {
                         this.checkChange(check);
                     } 
+                })
+
+                //结算事件
+                $("#right").on('click','#settlement',()=>{
+                    location.href = "/html/login.html";
                 })
             }
 
@@ -167,6 +173,7 @@ require(["config"],() => {
                 //console.log(this.check.length);
                 this.totalPrices();
             }
+
             //计算总数量和总价
             totalPrices(){
                 let allNum = 0;
@@ -183,13 +190,16 @@ require(["config"],() => {
                 // $("#numCount").html(allNum);
                 // $("#shopMoney").html(allSubtotal.toFixed(2));
                 checks.forEach(check => {
-                    let num = check.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstChild.nextSibling.nextSibling.nextSibling;
-                    //console.log(num);
-                    let price = check.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstChild.nextSibling;
-                    //console.log(price);
+                    //let num = check.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstChild.nextSibling.nextSibling.nextSibling;
+                    // console.log(num);
+                    //let price = check.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstChild.nextSibling;
+                    // console.log(price);
+                    let num = $(check).nextAll('.num').find('.inputNum');
+                    let price = $(check).nextAll('.subtotal').find('#subtotal');
+                    //console.log(price.html());
                     if(check.checked){
-                        allNum += Number(num.value);
-                        allSubtotal += Number(price.innerHTML);
+                        allNum += Number(num.val());
+                        allSubtotal += Number(price.html());
                     }
                 })
                 $("#cartNumber").html(allNum);
