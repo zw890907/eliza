@@ -81,6 +81,7 @@ require(["config"],() => {
                     }
                     this.bindEvents();
                     this.sceneChange();
+                    this.collect();
                 })
             }
             renderType (list) {
@@ -101,6 +102,18 @@ require(["config"],() => {
                     $("#shopList").show();
                     $("#line").removeClass('ac');
                     $("#field").addClass('ac');
+                })
+            }
+            collect(){
+                //console.log($("#addShop-xin"));
+                $("#shopList").on('click','#addShop-xin',(e)=>{
+                    let target = e.target;
+                    let favorite = $(target).parent().parent().parent().next();
+                    console.log(favorite);
+                    favorite.show();
+                    setInterval(() => {
+                        favorite.hide();
+                    }, 3000);
                 })
             }
         }

@@ -76,6 +76,7 @@ require(["config"],() => {
                         //console.log(this.data);
                     }
                     this.addCart();
+                    this.collect();
                 })
             }
             renderType (list) {
@@ -128,6 +129,39 @@ require(["config"],() => {
                     }
                     localStorage.setItem('cart',JSON.stringify(cart));
                     header.calcCartNum();
+                })
+            }
+
+            //商品列表切换事件
+            toggleButton(){
+                //let tButton = $("#switch");
+                let tbtns = document.querySelector("#switch").children;
+                let lastIndex = 1,
+                    index = 0;
+                //console.log(tButton);
+                //console.log(this.tbtns);
+                Array.from(tbtns).forEach((btn,i) => {
+                    btn.onclick = () => {
+                        index = i;
+                        tbtns[lastIndex].classList.remove("contain-allShop-ac");
+                        tbtns[index].classList.add("contain-allShop-ac");
+                        lastIndex = index;
+                        this.getType();
+                    }
+                })
+            }
+
+            //收藏点击事件
+            collect(){
+                //console.log($("#addShop-xin"));
+                $("#list-contain").on('click','#addShop-xin',(e)=>{
+                    let target = e.target;
+                    let favorite = $(target).parent().parent().parent().next();
+                    console.log(favorite);
+                    favorite.show();
+                    setInterval(() => {
+                        favorite.hide();
+                    }, 3000);
                 })
             }
             //轮播图切换事件
@@ -185,24 +219,7 @@ require(["config"],() => {
             //     this.imgs[this.index].classList.add("ac");
             //     this.lastIndex = this.index;
             // }
-            //商品列表切换事件
-            toggleButton(){
-                //let tButton = $("#switch");
-                let tbtns = document.querySelector("#switch").children;
-                let lastIndex = 1,
-                    index = 0;
-                //console.log(tButton);
-                //console.log(this.tbtns);
-                Array.from(tbtns).forEach((btn,i) => {
-                    btn.onclick = () => {
-                        index = i;
-                        tbtns[lastIndex].classList.remove("contain-allShop-ac");
-                        tbtns[index].classList.add("contain-allShop-ac");
-                        lastIndex = index;
-                        this.getType();
-                    }
-                })
-            }
+            
         }
         new Index();
     })

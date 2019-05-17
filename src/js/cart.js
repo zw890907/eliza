@@ -158,10 +158,19 @@ require(["config"],() => {
                     } 
                 })
 
-                //结算事件
+                //结算点击事件
                 $("#right").on('click','#settlement',()=>{
-                    location.href = "/html/login.html";
+                    if($.cookie("username")){
+                        location.href = "/html/settle.html";
+                    }else{
+                        location.href = "/html/login.html";
+                    }
                 })
+                
+                // //手动输入商品数量事件
+                // $("#left").keyup( (e)=>{
+
+                // })
             }
 
             //单选按钮方法

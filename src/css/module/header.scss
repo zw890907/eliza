@@ -97,6 +97,7 @@ header{
       border-radius: 15px;
       line-height: 30px;
       margin-left: 40px;
+      float: left;
       a{
         text-decoration: none;
       }
@@ -108,7 +109,7 @@ header{
       input{
         height: 20px;
         line-height: 20px;
-        width: 166px;
+        width: 150px;
         outline: none;
         border: none;
         color: #000000;
@@ -136,9 +137,11 @@ header{
       }
     }
     .login{
-      width: 200px;
-      text-align: center;
+      width: 160px;
+      //text-align: center;
+      margin-left: 30px;
       font-size: 14px;
+      float: left;
       a{
         color:#000000;
         &:hover{
@@ -148,8 +151,8 @@ header{
       }
     }
     .login-out{
-      width: 200px;
-      margin-left: 50px;
+      width: 160px;
+      margin-left: 30px;
       font-size: 14px;
       display: none;
       a{
@@ -162,6 +165,7 @@ header{
     }
     .cart{
       //margin-left: 40px;
+      font-size: 12px;
       position: relative;
       a{
         display: block;
