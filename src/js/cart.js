@@ -121,7 +121,8 @@ require(["config"],() => {
                     //console.log(cart);
                     if(num === 0){
                         localStorage.removeItem('cart');
-                        this.init();
+                        $("#no-shop").show();
+                        $("#left").hide();
                     }
                 })
 
