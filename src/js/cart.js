@@ -113,7 +113,7 @@ require(["config"],() => {
                                 return index !== a;
                             })
                             localStorage.setItem('cart',JSON.stringify(cart));
-                         }
+                        }
                     }
                     this.totalPrices();
                     let num = Number($("#cartNumber").html());
@@ -167,10 +167,29 @@ require(["config"],() => {
                     }
                 })
                 
-                // //手动输入商品数量事件
-                // $("#left").keyup( (e)=>{
-
-                // })
+                //手动输入商品数量事件
+                $(".inputNum").keyup( (e)=>{
+                    let target = e.target;
+                    let price = $(target).parent().prev().children("#price").html();
+                    let id = Number($(target).parents('li').attr('data-id'));
+                    let cart = localStorage.getItem('cart');
+                    cart = JSON.parse(cart);
+                    let index = -1;
+                    if(cart.some((item,i) => {
+                        index = i;
+                        return item.id === id;
+                    })){
+                        cart[index].num = Number($(target).val());
+                        let subtotalPrice = Number($(target).val() * price);
+                        let subtotal = $(target).parent().next().children("#subtotal");
+                        subtotal.html(subtotalPrice.toFixed(2));
+                        localStorage.setItem('cart',JSON.stringify(cart));
+                    }
+                    //console.log(cart[index].num);
+                    //console.log($(target));
+                    this.totalPrices();
+                })
+                
             }
 
             //单选按钮方法
