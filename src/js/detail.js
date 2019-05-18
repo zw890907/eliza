@@ -15,7 +15,7 @@ require(["config"],() => {
                 $.get(url.rapBaseUrl + "detail/get",{id},result => {
                     if(result.res_code === 1){
                         let {data} = result.res_body;
-                        console.log(data);
+                        //console.log(data);
                         //扩展运算添加属性（key:value)，并且id为解构赋值
                         //当为真是接口时，不需要下面这句代码
                         data = {...data,id};
@@ -24,6 +24,7 @@ require(["config"],() => {
                         this.data = data;
                         this.render(data);
                     }
+                    this.collect();
                 })
             }
             render(data){
@@ -105,7 +106,7 @@ require(["config"],() => {
                     localStorage.setItem('cart',JSON.stringify(cart));
                 })
             }
-            
+            //放大镜效果
             zoom () {
                 // 放大镜插件
                 $(".big-img").elevateZoom({
@@ -115,6 +116,17 @@ require(["config"],() => {
                   borderSize:'1',    
                   borderColor:'#888'
                 });
+            }
+            
+            //收藏点击事件
+            collect(){
+                //console.log($("#minIcon-xin"));
+                $("#minIcon-xin").on('click',() => {
+                    $(".favorite").show();
+                    setInterval(()=>{
+                        $(".favorite").hide();
+                    },2000)
+                })
             }
         }
         new Detail();
