@@ -70,8 +70,8 @@ require(["config"],() => {
                 //将需要传递的参数进行结构赋值
                 // let {pageIndex,count} = this;
                 //ajax请求数据
-                $.get( url.rapBaseUrl + 'list/type',res => {
-                    if(res.res_code === 1){
+                $.get( url.rapBaseUrl + 'list',res => {
+                    if(res.res_code === 200){
                         let data = res.res_body.list;
                         //将data存为全局的变量
                         this.data = data;

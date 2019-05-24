@@ -12,8 +12,8 @@ require(["config"],() => {
                 //console.log(location);
                 let id = Number(location.search.slice(4));
                 //console.log(id);
-                $.get(url.rapBaseUrl + "detail/get",{id},result => {
-                    if(result.res_code === 1){
+                $.get(url.rapBaseUrl + "detail",{id},result => {
+                    if(result.res_code === 200){
                         let {data} = result.res_body;
                         //console.log(data);
                         //扩展运算添加属性（key:value)，并且id为解构赋值
@@ -22,13 +22,14 @@ require(["config"],() => {
                         //data.id = id;
                         //将data存为全局的变量
                         this.data = data;
+                        //console.log(this.data);
                         this.render(data);
                     }
                     this.collect();
                 })
             }
             render(data){
-                //console.log(data);
+                console.log(data);
                 let html = template('shop-detail',{data});
                 $("#shopDetail").html(html);
                 this.zoom();
